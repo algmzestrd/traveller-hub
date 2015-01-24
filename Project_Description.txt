@@ -1,0 +1,112 @@
+Com Sci 309 - Group 14 Project Description (Draft / Temporary)
+
+Type: A Website
+
+Goal: To provide local information and convenient means of communication
+to traverllers living in hotels
+
+Main Functionalities:
+
+(1) Login in / Register Page
+
+	Description: This is the first page displayed to every users who are
+	just connecting to the hotel wifi
+
+	___________________________________________________________________
+	|                                                                 |
+	|                                                                 |
+	|                                                                 |
+	|                                                                 |
+	|                  Traveller Hub (Temporary Name)                 |
+	|                                                                 |
+	|                                                                 |
+	|                                                                 |
+	|                                                                 |
+	|                                                                 |
+	|              Register                    Log in                 |
+	|                                                                 |
+	|                                                                 |
+	|                                                                 |
+	|                                                                 |
+	___________________________________________________________________
+
+	Register Button: Redirect users to register page.
+	Register Information: Email, Password, Username(Optional),
+	Phone#(Optional)
+
+	Login in button: Redirect users to login page (or making a responsive
+	page to display the login form in this same page)
+
+(2) Main Webpage
+
+	Description: All functionalities of this website are in the Main
+	Webpage
+
+	___________________________________________________________________
+	|                                                                 |
+	|                          Header                                 |
+	|_________________________________________________________________|
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|              Place to eat                 |       Weather       |
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|___________________________________________|_____________________|
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                 Chat Wall                 |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	| //////////Input_Your_Message_Here/////////|                     |
+	|___________________________________________|      Place to visit |
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                Activities Wall            |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                                           |                     |
+	|                                Post Button|                     |
+	|___________________________________________|_____________________|
+	|                                                                 |
+	|                Front Desk News                                  |
+	|                                           Front Desk Help Button|
+	|_________________________________________________________________|
+	|                            Footer                               |
+	|_________________________________________________________________|	
+
+	Chat Wall: Broadcast messages from all users
+
+	Activities Wall: Display new post from users' post
+
+	Subpage:
+	
+	Place to eat: We can create an link to website like Yelp or etc.
+	Place to visit: We can create an link to website like TripAdvisor or
+	etc.
+	Weather: We can use Yahoo Weather API or etc.
+
+	(Real Subpage):
+	
+	Activities Post: Redirect users to a page to write their activities
+	and post
+	
+	Activities Wall: Redirect users to a page where all activities are
+	showed there. Users can choose to "Participate" to the activities
+	they are interested in
+
+	Front Desk Help Button: Redirect users to front desk help page where
+	users can chat with the staff online
+
+	Chat Wall: If users click on one of the users on the chat wall,
+	redirect them to a page where they can chat privately
+

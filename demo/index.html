@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>User Profile - Traveler's Hub</title>
+  <link rel="shortcut icon" href="http://designshack.net/favicon.ico">
+  <link rel="icon" href="http://designshack.net/favicon.ico">
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+  <div id="topbar">
+  <a href="http://designshack.net">Back to Main Page</a>
+  </div>
+  
+  <div id="w">
+    <div id="content" class="clearfix">
+      <div id="userphoto"><img src="images/avatar.png" alt="default avatar"></div>
+      <h1>User's Name</h1>
+
+      <nav id="profiletabs">
+        <ul class="clearfix">
+          <li><a href="#bio" class="sel">Basic Information</a></li>
+          <li><a href="#activity">Activities History</a></li>
+        </ul>
+      </nav>
+      
+      <section id="bio">
+	<form>
+	<div class="form-group">
+        <label for="inputEmail">What is your preferred name:</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">Where are you from:</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="Location">
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">Anything about you:</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="Description">
+    </div>
+		<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+      </section>
+      
+      <section id="activity" class="hidden">
+        <p>Most recent actions:</p>
+        
+        <p class="activity">@10:15PM - Submitted a <b>Review</b> article</p>
+        
+        <p class="activity">@9:50PM - Submitted a <b>Question</b> article</p>
+        
+        <p class="activity">@8:15PM - Posted a comment</p>
+        
+        <p class="activity">@8:15PM - View the post <a href = "www.google.com">'name'</a></p>
+        
+      </section>
+      
+    </div><!-- @end #content -->
+  </div><!-- @end #w -->
+<script type="text/javascript">
+$(function(){
+  $('#profiletabs ul li a').on('click', function(e){
+    e.preventDefault();
+    var newcontent = $(this).attr('href');
+    
+    $('#profiletabs ul li a').removeClass('sel');
+    $(this).addClass('sel');
+    
+    $('#content section').each(function(){
+      if(!$(this).hasClass('hidden')) { $(this).addClass('hidden'); }
+    });
+    
+    $(newcontent).removeClass('hidden');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+I did most of these through great tutorials that I found online.
+
+To run these, copy paste the .php code into an online php compiler.
+
+I recommend using the one at: 
+
+http://www.tutorialspoint.com/codingground.htm
+
+Let me know if you guys have any questions.
+
+The Birthday Calculator example uses pretty much anything and everything in php we could need for this project.

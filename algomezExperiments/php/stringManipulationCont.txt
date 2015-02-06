@@ -15,4 +15,6 @@ function getTLD($domain)
 	
 	return $answer;
 }
+
+echo getTLD("www.iastate.edu");
 ?>

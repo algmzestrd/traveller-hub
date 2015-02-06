@@ -228,5 +228,6 @@ function getBirthDate($birthdate)
 	return $returnArray;
 }
 
-//print_r(getBirthDate('01/23/1985'));
+print_r(getBirthDate('01/23/1985'));
+
 ?>

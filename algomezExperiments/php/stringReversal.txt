@@ -1,6 +1,8 @@
 <?php
 
 //old solution when first messing around with PHP
+//Reverses string in the form of "abc, def, ghi" into
+//"cba, fed, ihg". Not necessarily limited to three characters.
 
 /*function bassAckwards($input)
 {

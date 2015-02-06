@@ -12,4 +12,6 @@ function helloWorld($count)
 
     return $answer; //echo prints out final result
 }
+
+echo helloWorld(5);
 ?>

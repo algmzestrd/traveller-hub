@@ -1,0 +1,90 @@
+<?php
+
+//old solution when first messing around with PHP
+
+/*function bassAckwards($input)
+{
+	$inputString = $input;
+	$length = strlen($inputString);
+	$lastIndex = $length - 1;
+	$answer = "";
+	$index = 0;
+	$start = 0;
+	$pos = -1;
+
+    while (($pos = strpos($inputString, chr(44), $pos + 1)) !== false) 
+{
+    $positions[] = $pos;
+}
+    
+    $positionsSize = sizeOf($positions);
+    
+for($loopIndex = 0; $loopIndex < $positionsSize; $loopIndex++)
+{
+    
+    $index = $positions[$loopIndex];
+    while($index >= $start)
+    {
+        if($inputString[$index] != chr(44))
+        $answer .= $inputString[$index];
+        $index--;
+    }
+    
+    $start = $positions[$loopIndex];
+    
+    $answer .= chr(44);
+    
+    if($loopIndex == $positionsSize - 1)
+    {
+        while($lastIndex >= $positions[$positionsSize - 1])
+    {
+        if($inputString[$lastIndex] !== chr(44))
+        $answer .= $inputString[$lastIndex];
+        
+        $lastIndex--;
+    }
+    }
+}
+    
+    return $answer;
+}*/
+
+//After a while learning PHP
+
+function bassAckwards($input)
+{
+	$length = strlen($input);
+        $commaDeLim = chr(44); //ascii value for ','
+	$answer = "";
+	$x = 0;
+	$y = 0;
+	$i = 0;
+	
+	while($i < $length)
+	{
+		while($input[$i] != $commaDeLim)
+		{
+			$i++;
+			if($i == $length)
+			break;
+		}
+		
+		$y = $i + 1;
+		
+		while($i >= $x)
+		{
+		    if($input[$i] != $commaDeLim)
+			$answer .= $input[$i];
+			$i--;
+		}
+		
+		$x = $y;
+		$i = $y;
+		
+		if($i < $length)
+			$answer .= chr(44);
+	}
+	
+    return $answer;
+}
+?>

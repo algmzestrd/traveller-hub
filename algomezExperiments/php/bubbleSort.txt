@@ -1,5 +1,5 @@
 <?php
-/*
+
 $numberList = array(12);
 
 $numberList[0] = 3;
@@ -19,7 +19,7 @@ $otherList = array(3);
 
 $otherList[0] = 3;
 $otherList[1] = 1;
-$otherList[2] = 2;*/
+$otherList[2] = 2;
 
 function swap(&$numbers, $i)
 {
@@ -58,6 +58,8 @@ function bubbleSort($numbers)
      return $numbers;
 }
 
-//print_r(bubbleSort($otherList));
+print_r(bubbleSort($otherList));
+
+print_r(bubbleSort($numberList));
 
 ?>

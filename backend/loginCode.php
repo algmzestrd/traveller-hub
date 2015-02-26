@@ -14,8 +14,8 @@ function checkPass($user, $password)
 	
 	$hash = md5($password);
 	
-	if($hash == $array["Passwd"])
-	    $UserID = $array["UserID"];
+	if($hash == $array["password"])
+	    $UserID = $array["User_ID"];
 	else
 	    $UserID = -1;
 

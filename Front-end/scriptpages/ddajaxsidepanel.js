@@ -1,11 +1,6 @@
-/* Ajax Side Panel script (v1.0)
-* Created: May 1st, 2012. This notice must stay intact for usage 
-* Author: Dynamic Drive at http://www.dynamicdrive.com/
-* Visit http://www.dynamicdrive.com/ for full source code
-*/
 
 var ddajaxsidepanel = {
-	defaults: {ajaxloadgif:'loading_pic.gif', fx:{dur:'normal', easing:'swing'}, openamount:'35%', openamount_minthreshold:'200px'},
+	defaults: {ajaxloadgif:'loading_pic.gif', fx:{dur:'normal', easing:'swing'}, openamount:'25%', openamount_minthreshold:'200px'},
 
 	$panelref: null,
 	$contentarea: null,
@@ -127,7 +122,7 @@ jQuery(function(){
 		targetselector: 'a[rel="ajaxpanel"]',
 		ajaxloadgif: 'loading_pic.gif', //full path to "loading" gif relative to document. When in doubt use absolute URL to image.
 		fx: {dur:300, easing: 'easeInQuad'}, // dur: duration of slide effect (milliseconds), easing: 'ease_in_type_string'
-		openamount:'35%', // Width of panel when fully opened (Percentage value relative to page, or pixel value
+		openamount:'25%', // Width of panel when fully opened (Percentage value relative to page, or pixel value
 		openamount_minthreshold:'200px' //Minimum required width of panel (when fully opened)  before panel is shown. This prevents panel from being shown on small screens or devices.
 	})
 });

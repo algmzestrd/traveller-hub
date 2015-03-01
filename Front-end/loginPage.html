@@ -95,14 +95,14 @@ slideimages[2].src = "Materials/login_pic3.jpg"
 <script type="text/javascript">
 
 //variable that will increment through the images
-var step=0;
+var step = 0;
 
 function slideit(){
  //if browser does not support the image object, exit.
  if (!document.images)
   return;
  document.getElementById('slide').src = slideimages[step].src;
- if (step<2)
+ if (step < 2)
   step++;
  else
   step=0;

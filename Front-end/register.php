@@ -61,7 +61,7 @@ $errorMessage = "Email address is already registered.";
 else {
 
     $queryString = "INSERT INTO User (User_ID , password,register_date,role)
-                VALUES (";
+                    VALUES (";
     $queryString .= $email . "," . $password . "," . date("m.d.y") . "," . "User";
 
     $query = mysql_query($queryString);

@@ -43,30 +43,31 @@ $errorMessage = $errorMessage . "Password must be between 8 and 16 characters" .
 $connection = mysql_connect($server, $serverUser, $serverPassword);
 $database = mysql_select_db($serverDatabase, $connection);
 
-$queryString = "INSERT INTO User (User_ID , password,register_date,role)
-                VALUES (";
 
-$queryString .= $email . "," . $password . "," . date("m.d.y") . "," . "User";
+$isEmailTakenQuery = "SELECT User_ID
+                        FROM User
+                        WHERE User_ID";
+$isEmailTakenQuery .= "=" . $email;
 
-$SQL = "SELECT * FROM login WHERE L1 = $uname";
-$result = mysql_query($SQL);
-$num_rows = mysql_num_rows($result);
+$checkEmailQuery = mysql_query($isEmailTakenQuery);
 
-if ($num_rows > 0) {
+$rows = mysql_num_rows($checkEmailQuery);
 
-$errorMessage = "Username already taken";
+if ($rows > 0) {
+
+$errorMessage = "Email address is already registered.";
 
 } 
 else {
 
+    $queryString = "INSERT INTO User (User_ID , password,register_date,role)
+                VALUES (";
+    $queryString .= $email . "," . $password . "," . date("m.d.y") . "," . "User";
+
+    $query = mysql_query($queryString);
 }
 
-
-$SQL = "INSERT INTO User (L1, L2) VALUES ($uname, $pword)";
-
-$result = mysql_query($SQL);
-
-mysql_close($db_handle);
+mysql_close($connection);
 
 
 session_start();

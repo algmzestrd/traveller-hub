@@ -17,7 +17,7 @@ var WaterFull = {
           {imgUrl:'images/15.jpg',link:'javascript:void(0)',title:'14'}
           ],
     createChild:function(link,imagesUrl,title){
-        var str = '<a href="' + link + '"><img src="' + imagesUrl + '"></a>' + '<p class="title">' + title + '</p>';
+        var str = '<p>First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First </p>';
         var div = document.createElement('div');
         div.className = 'water';
         div.innerHTML = str; 

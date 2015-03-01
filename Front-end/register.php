@@ -1,5 +1,4 @@
-<?
-session_start();
+<?php
 
 //Information for SQL Server. Stored in variables for clarity.
 $server = "mysql.cs.iastate.edu";
@@ -70,8 +69,6 @@ else {
 
 mysql_close($connection);
 
-
-session_start();
 $_SESSION['login'] = "1";
 
 header ("Location: login.php");

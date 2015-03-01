@@ -1,4 +1,6 @@
-<!doctype html>
+<!DOCTYPE HTML>
+<!--suppress CheckImageSize -->
+<meta charset="UTF-8">
 <html>
     <head>
     <title>Travelers' Hub Login</title>
@@ -6,9 +8,9 @@
           <link rel = "stylesheet" href="stylepages/color.css">
           <link rel = "stylesheet" href="stylepages/style.css">
     </head> 
-    <script type="text/javascript">
+    <script>
 
-var slideimages = new Array(); // create new array to preload images
+var slideimages = []; // create new array to preload images
 slideimages[0] = new Image(); // create new instance of image object
 slideimages[0].src = "Materials/login_pic1.jpg"; // set image src property to image path, preloading image in the process
 slideimages[1] = new Image();
@@ -72,7 +74,7 @@ slideimages[2].src = "Materials/login_pic3.jpg"
 								    </div>
 								    <button name="submit" type="submit" class="btn btn-default custom"><b style = "color: #000000">Login</b></button>
 								    <button name="register" type="submit" class="btn btn-primary custom"><b style = "color: #FFFFFF">Register</b></button>
-                                    <span><?php echo $error; ?></span>
+                                    <span><?php echo "HERE"; ?></span>
 								</form>
         						</div>
         					</div>

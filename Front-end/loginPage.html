@@ -1,8 +1,5 @@
 <?php
-
 include('loginCode.php');
-include('register.php');
-
 ?>
 <!doctype html>
 <html>
@@ -78,8 +75,8 @@ slideimages[2].src = "Materials/login_pic3.jpg"
 								    </div>
 								    <button name="submit" type="submit" class="btn btn-default custom"><b style = "color: #000000">Login</b></button>
 								    <button name="register" type="submit" class="btn btn-primary custom"><b style = "color: #FFFFFF">Register</b></button>
+                                    <span><?php echo $error; ?></span>
 								</form>
-                                <span><?php echo "HERE"; ?></span>
         						</div>
         					</div>
         				</div>

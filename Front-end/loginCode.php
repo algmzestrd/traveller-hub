@@ -29,8 +29,8 @@ if($isset($_POST['submit'])) {
         //SQL Query. Typed out here for clarity.
         $queryString = "SELECT User_ID, password
                         FROM User
-                        WHERE User_ID=";
-        $queryString .= $email . "AND password=" . $password;
+                        WHERE User_ID";
+        $queryString .= "=" . $email . "AND password=" . $password;
 
 
         $query = mysql_query($queryString);

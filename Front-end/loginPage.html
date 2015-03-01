@@ -1,3 +1,9 @@
+<?php
+
+include('loginCode.php');
+include('register.php');
+
+?>
 <!doctype html>
 <html>
     <head>
@@ -63,16 +69,17 @@ slideimages[2].src = "Materials/login_pic3.jpg"
     					<div class='cell'> 
     						<div class='srchBox'> 
     							<h1>Travelers' Hub</h1> 
-    							<form>
+    							<form action ="" method="post">
     								<div class="form-group">
-								        <input type="email" class="form-control" id="inputEmail" placeholder="inputEmail">
+								        <input name="inputEmail" type="email" class="form-control" id="inputEmail" placeholder="Email">
 								    </div>
 								    <div class="form-group">
-								        <input type="password" class="form-control" id="inputPassword" placeholder="inputPassword">
+								        <input name="inputPassword" type="password" class="form-control" id="inputPassword" placeholder="Password">
 								    </div>
-								    <button type="submit" class="btn btn-default custom"><b style = "color: #000000">Login</b></button>
-								    <button type="submit" class="btn btn-primary custom"><b style = "color: #FFFFFF">Register</b></button>
+								    <button name="submit" type="submit" class="btn btn-default custom"><b style = "color: #000000">Login</b></button>
+								    <button name="register" type="submit" class="btn btn-primary custom"><b style = "color: #FFFFFF">Register</b></button>
 								</form>
+                                <span><?php echo "HERE"; ?></span>
         						</div>
         					</div>
         				</div>
@@ -104,7 +111,7 @@ function slideit(){
  else
   step=0;
  //call function "slideit()" every 2.5 seconds
- setTimeout("slideit()",0)
+// setTimeout("slideit()",0)
 }
 
 slideit()

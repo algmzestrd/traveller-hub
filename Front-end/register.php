@@ -30,10 +30,10 @@ $errorMessage = $errorMessage . "Password must be between 8 and 16 characters" .
 
 }
 
-$user_name = "";
-$pass_word = "";
+$user_name = "u30914";
+$pass_word = "AfzMyGF4c7";
 $database = "User";
-$server = "127.0.0.1";
+$server = "mysql.cs.iastate.edu";
 
 $db_handle = mysql_connect($server, $user_name, $pass_word);
 $db_found = mysql_select_db($database, $db_handle);
@@ -57,7 +57,7 @@ else {
 }
 
 
-$SQL = "INSERT INTO login (L1, L2) VALUES ($uname, $pword)";
+$SQL = "INSERT INTO User (L1, L2) VALUES ($uname, $pword)";
 
 $result = mysql_query($SQL);
 

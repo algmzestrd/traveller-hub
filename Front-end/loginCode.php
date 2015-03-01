@@ -25,6 +25,7 @@ if($isset($_POST['submit'])) {
 
         //Open connection to SQL Server.
         $connection = mysql_connect($server, $serverUser, $serverPassword);
+        $database = mysql_select_db($serverDatabase, $connection);
 
         //SQL Query. Typed out here for clarity.
         $queryString = "SELECT User_ID, password
@@ -43,10 +44,8 @@ if($isset($_POST['submit'])) {
             $error = "Email or password is invalid. User may not be registered";
         }
 
-        mysql_close($query);
+        mysql_close($connection);
 
-        $connection = mysql_connect($server, $serverUser, $serverPassword);
-        $database = mysql_select_db($serverDatabase, $connection);
     }
 }
 ?>

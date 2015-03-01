@@ -1,25 +1,35 @@
-$uname = $_POST['username'];
-$pword = $_POST['password'];
+<?
+session_start();
 
-$uname = htmlspecialchars($uname);
-$pword = htmlspecialchars($pword);
+//Information for SQL Server. Stored in variables for clarity.
+$server = "mysql.cs.iastate.edu";
+$serverUser = "u30914";
+$serverPassword = "AfzMyGF4c7";
+$serverDatabase = "db30914";
+
+$error = "";
+
+$email = $_POST['inputEmail'];
+$password = $_POST['inputPassword'];
+
+$emailLength = strlen($email);
+$passwordLength = strlen($password);
 
 
-$uLength = strlen($uname);
-$pLength = strlen($pword);
+
 
 if ($uLength >= 5 && $uLength <= 15) {
 
-$errorMessage = "";
+$error = "";
 
 }
 else {
 
-$errorMessage = $errorMessage . "Username must be between 10 and 20 characters" . "<BR>";
+$error = $error . "Username must be between 10 and 20 characters" . "<BR>";
 
 }
 
-if ($pLength >= 4 && $pLength <= 8) {
+if ($passwordLength >= 4 && $passwordLength <= 8) {
 
 $errorMessage = "";
 
@@ -30,18 +40,13 @@ $errorMessage = $errorMessage . "Password must be between 8 and 16 characters" .
 
 }
 
-$user_name = "u30914";
-$pass_word = "AfzMyGF4c7";
-$database = "User";
-$server = "mysql.cs.iastate.edu";
+$connection = mysql_connect($server, $serverUser, $serverPassword);
+$database = mysql_select_db($serverDatabase, $connection);
 
-$db_handle = mysql_connect($server, $user_name, $pass_word);
-$db_found = mysql_select_db($database, $db_handle);
+$queryString = "INSERT INTO User (User_ID , password,register_date,role)
+                VALUES (";
 
-if ($db_found) {
-
-}
-
+$queryString .= $email . "," . $password . "," . date("m.d.y") . "," . "User";
 
 $SQL = "SELECT * FROM login WHERE L1 = $uname";
 $result = mysql_query($SQL);

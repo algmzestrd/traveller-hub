@@ -143,13 +143,13 @@ input.form-control {
 }
 
 .crop {
-    width: 1440px;
-    height: 525px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
 .crop img {
-    width: 1440px;
-    height: 960.768px;
-    margin: -270px 0 0 0px;
+    width: 100%;
+    height: 100%;
+    margin: -300px -300px 0px 0px;
 }

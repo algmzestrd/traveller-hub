@@ -12,14 +12,13 @@ $serverDatabase = "db30914";
 $error = '';
 
 //If stuff has been submitted..
-if($isset($_POST['submit'])) {
+if(isset($_POST['submit'])) {
 
     //If either field is empty...
     if (empty($_POST['inputEmail']) || empty($_POST['inputPassword'])) {
         $error = "Email or password is invalid";
     } else {
         $email = $_POST['inputEmail'];
-        $email = "algomez@iastate.edu";
         $email = trim($email, "@.");
         $password = $_POST['inputPassword'];
 

@@ -10,6 +10,7 @@ $serverDatabase = "db30914";
 $error = "";
 
 $email = $_POST['inputEmail'];
+$email = trim($email, "@.");
 $password = $_POST['inputPassword'];
 
 $emailLength = strlen($email);
@@ -18,7 +19,7 @@ $passwordLength = strlen($password);
 
 
 
-if ($uLength >= 5 && $uLength <= 15) {
+if ($emailLength >= 5 && $emailLength <= 15) {
 
 $error = "";
 

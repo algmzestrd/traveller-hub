@@ -27,8 +27,8 @@ CREATE TABLE `Activity` (
   `Title` varchar(45) DEFAULT NULL,
   `Content` varchar(300) DEFAULT NULL,
   `User_ID` varchar(45) DEFAULT NULL,
-  `Post_Time` datetime DEFAULT NULL,
-  `Limit` int(11) DEFAULT NULL,
+  `Post_Time` varchar(45) DEFAULT NULL,
+  `Participants` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Activity_ID`),
   KEY `User_ID_idx` (`User_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -40,6 +40,7 @@ CREATE TABLE `Activity` (
 
 LOCK TABLES `Activity` WRITE;
 /*!40000 ALTER TABLE `Activity` DISABLE KEYS */;
+INSERT INTO `Activity` VALUES ('','Demo2','We will show the tA',NULL,'2015-03-02 00:00:00','5');
 /*!40000 ALTER TABLE `Activity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +158,7 @@ DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
   `User_ID` varchar(45) NOT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `register_date` int(11) NOT NULL,
+  `register_date` datetime NOT NULL,
   `role` varchar(45) NOT NULL,
   PRIMARY KEY (`User_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -181,4 +182,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-02-26 10:34:35
+-- Dump completed on 2015-03-02  1:02:28

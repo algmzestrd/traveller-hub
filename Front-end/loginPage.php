@@ -1,5 +1,6 @@
 <?php
 include('loginCode.php');
+include('register.php');
 if($_SESSION['login_user'] ==  1){
 //header("location: post_editing_page.html");
 $error = "Login Successful!";

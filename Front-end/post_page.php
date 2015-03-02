@@ -89,7 +89,7 @@ $numberOfActivities = mysql_num_rows($query);
         </div>
         <div class="water">
             <p><?php
-                if($numberOfActivities >= 1)
+                if($numberOfActivities >= 2)
                 {}
                 else{}
 
@@ -106,7 +106,7 @@ $numberOfActivities = mysql_num_rows($query);
         </div>
         <div class="water">
             <p><?php
-                if($numberOfActivities >= 1)
+                if($numberOfActivities >= 3)
                 {}
                 else{}
 
@@ -121,7 +121,7 @@ $numberOfActivities = mysql_num_rows($query);
         </div>
         <div class="water">
             <p><?php
-                if($numberOfActivities >= 1)
+                if($numberOfActivities >= 4)
                 {}
                 else{}
 
@@ -138,7 +138,7 @@ $numberOfActivities = mysql_num_rows($query);
         </div>
         <div class="water">
             <p><?php
-                if($numberOfActivities >= 1)
+                if($numberOfActivities >= 5)
                 {}
                 else{}
 
@@ -153,7 +153,7 @@ $numberOfActivities = mysql_num_rows($query);
         </div>
         <div class="water">
             <p><?php
-                if($numberOfActivities >= 1)
+                if($numberOfActivities >= 6)
                 {}
                 else{}
 
@@ -174,7 +174,7 @@ $numberOfActivities = mysql_num_rows($query);
         </div>
         <div class="water">
             <p><?php
-                if($numberOfActivities >= 1)
+                if($numberOfActivities >= 7)
                 {}
                 else{}
 

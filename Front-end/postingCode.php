@@ -25,18 +25,20 @@ if(isset($_POST['posting'])) {
         $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
         //SQL Query. Typed out here for clarity.
-        $queryString = "INSERT INTO Activity (Title , Content, Post_Time, Limit) VALUES (";
+        $queryString = "INSERT INTO Activity (Title, Content, Participants, Post_Time) VALUES (";
         $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $participants . "'" . ", " . "'" . $date . "'" . ")";
 
         $query = mysqli_query($connection, $queryString);
 
         if(!$query)
         {
-            $error = "Please try again. No special characters!";
+            $error = "Please try again. No special characters or duplicate events!";
         }
         else{
             $error = "Posting successful!";
         }
+
+//        var_dump(mysqli_error($connection));
         mysqli_close($connection);
 
     }

@@ -1,3 +1,10 @@
+<?php
+include('loginCode.php');
+if(isset($_SESSION['login_user'])){
+header("location: profile.php");
+$error = "HELLO";
+}
+?>
 <!DOCTYPE HTML>
 <!--suppress CheckImageSize -->
 <meta charset="UTF-8">
@@ -64,7 +71,7 @@ slideimages[2].src = "Materials/login_pic3.jpg"
     					<div class='cell'> 
     						<div class='srchBox'> 
     							<h1>Travelers' Hub</h1> 
-    							<form action ="loginCode.php" method="post">
+    							<form action ="" method="post">
     								<div class="form-group">
 								        <input name="inputEmail" type="email" class="form-control" id="inputEmail" placeholder="Email">
 								    </div>
@@ -73,7 +80,7 @@ slideimages[2].src = "Materials/login_pic3.jpg"
 								    </div>
 								    <button name="submit" type="submit" class="btn btn-default custom"><b style = "color: #000000">Login</b></button>
 								    <button name="register" type="submit" class="btn btn-primary custom"><b style = "color: #FFFFFF">Register</b></button>
-                                    <br><br><span>Hello</span>
+                                    <br><br><span><?php echo $error; ?></span>
 								</form>
         						</div>
         					</div>

@@ -5,9 +5,6 @@ $server = "mysql.cs.iastate.edu:3306";
 $serverUser = "u30914";
 $serverPassword = "AfzMyGF4c7";
 $serverDatabase = "db30914";
-$email = $_POST['inputEmail'];
-$password = $_POST['inputPassword'];
-$passwordLength = strlen($password);
 $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
 //Blank error message.
@@ -21,6 +18,9 @@ if(isset($_POST['register'])) {
         $error = "Missing Email or Password.";
         $_SESSION['login_user'] = 0;
     } else {
+        $email = $_POST['inputEmail'];
+        $password = $_POST['inputPassword'];
+        $passwordLength = strlen($password);
 
         if ($passwordLength >= 4 && $passwordLength <= 8) {
                 //Open connection to SQL Server.

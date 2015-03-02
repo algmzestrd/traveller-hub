@@ -1,8 +1,8 @@
 <?php
 include('loginCode.php');
-if(isset($_SESSION['login_user'])){
-header("location: profile.php");
-$error = "HELLO";
+if($_SESSION['login_user'] ==  1){
+//header("location: post_editing_page.html");
+$error = "Login Successful!";
 }
 ?>
 <!DOCTYPE HTML>

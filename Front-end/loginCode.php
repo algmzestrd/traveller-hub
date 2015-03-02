@@ -15,26 +15,28 @@ if(isset($_POST['submit'])) {
     //If either field is empty...
     if (empty($_POST['inputEmail']) || empty($_POST['inputPassword'])) {
         $error = "Missing Email or Password.";
+	$_SESSION['login_user'] = 0;
       } else {
         $email = $_POST['inputEmail'];
         $password = $_POST['inputPassword'];
 
         //Open connection to SQL Server.
-        $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);        
-        //SQL Query. Typed out here for clarity.
-        $queryString = "SELECT User_ID, password
-                        FROM User
-                        WHERE User_ID";
-        $queryString .= "=" . $email . " " ."AND password=" . $password . ";";
-        
-        $query = mysqli_query($connection, $queryString);
+        $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
+        //SQL Query. Typed out here for clarity.
+        $email = mysqli_real_escape_string($connection, $email);
+        $queryString = "SELECT User_ID, password FROM User WHERE User_ID";
+        $queryString .= "=". "'". $email . "'" . " " ."AND password=" ."'". $password."'";
+        
+	$query = mysqli_query($connection, $queryString);
+         
         $rows = mysqli_num_rows($query);
 
         if ($rows == 1) {
-            $_SESSION['login_user'] = $email;
+            $_SESSION['login_user'] = 1;
         } else {
            $error = "Invalid Email or Password. Are you registered?";
+	   $_SESSION['login_user'] = 0;
         }
         mysqli_close($connection);
 

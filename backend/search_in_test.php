@@ -27,5 +27,3 @@ if(isset($_POST['search'])){
 }
     
 print_r("$output");
-
-?>

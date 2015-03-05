@@ -29,7 +29,7 @@ if(isset($_POST['register'])) {
                 //SQL Query. Typed out here for clarity.
                 $email = mysqli_real_escape_string($connection, $email);
                 $queryString = "INSERT INTO User (User_ID , password, register_date, role) VALUES (";
-                $queryString .= "'" . $email . "'" . ", " . "'" . $password . "'" . ", " . "'" . date("m.d.y, G:i:s") . "'" . ", " . "'" ."User" . "'" . ")";
+                $queryString .= "'" . $email . "'" . ", " . "'" . $password . "'" . ", " . "'" . date("y.m.d G:i:s") . "'" . ", " . "'" ."User" . "'" . ")";
           //      var_dump($queryString);
 
                 $query = mysqli_query($connection, $queryString);

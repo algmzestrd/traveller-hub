@@ -8,15 +8,8 @@ $serverPassword = "AfzMyGF4c7";
 $serverDatabase = "db30914";
 
 //Blank error message.
-$error = '';
+$response = '';
 
-//If stuff has been submitted..
-if(isset($_POST['submit'])) {
-    //If either field is empty...
-    if (empty($_POST['inputEmail']) || empty($_POST['inputPassword'])) {
-	$_SESSION['login_user'] = 0;
-        $error = "Missing Email or Password.";
-      } else {
         $email = $_POST['inputEmail'];
         $password = $_POST['inputPassword'];
 
@@ -33,12 +26,12 @@ if(isset($_POST['submit'])) {
         $rows = mysqli_num_rows($query);
 
         if ($rows == 1) {
-            $_SESSION['login_user'] = 1;
+            $response = "success";
         } else {
- 	   $_SESSION['login_user'] = 0;
-	   $error = "Invalid Email or Password. Are you registered? If not, click 'Register' for an account.";
+ 	        $response = "invalid";
         }
         mysqli_close($connection);
 
-    }
-}
+        echo json_encode(array('notify'=>$response));
+
+

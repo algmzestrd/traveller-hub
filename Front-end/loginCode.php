@@ -8,12 +8,8 @@ $serverPassword = "AfzMyGF4c7";
 $serverDatabase = "db30914";
 
 //Blank error message.
-$response = '';
-if (!empty($_POST['inputEmail']) && !empty($_POST['inputPassword'])) {
     $email = $_POST['inputEmail'];
-    echo $email;
     $password = $_POST['inputPassword'];
-    echo $password;
 
     //Open connection to SQL Server.
     $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
@@ -32,9 +28,10 @@ if (!empty($_POST['inputEmail']) && !empty($_POST['inputPassword'])) {
     } else {
         $response = "invalid";
     }
-    mysqli_close($connection);
 
     echo $response;
 
+    mysqli_close($connection);
 
-}
+
+

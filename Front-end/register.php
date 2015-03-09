@@ -8,16 +8,7 @@ $serverDatabase = "db30914";
 $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
 //Blank error message.
-$error = '';
 
-
-//If stuff has been submitted..
-if(isset($_POST['register'])) {
-    //If either field is empty...
-    if (empty($_POST['inputEmail']) || empty($_POST['inputPassword'])) {
-        $error = "Missing Email or Password.";
-        $_SESSION['login_user'] = 0;
-    } else {
         $email = $_POST['inputEmail'];
         $password = $_POST['inputPassword'];
         $passwordLength = strlen($password);
@@ -29,7 +20,7 @@ if(isset($_POST['register'])) {
                 //SQL Query. Typed out here for clarity.
                 $email = mysqli_real_escape_string($connection, $email);
                 $queryString = "INSERT INTO User (User_ID , password, register_date, role) VALUES (";
-                $queryString .= "'" . $email . "'" . ", " . "'" . $password . "'" . ", " . "'" . getdate() . "'" . ", " . "'" ."User" . "'" . ")";
+                $queryString .= "'" . $email . "'" . ", " . "'" . $password . "'" . ", " . "'" . "" . "'" . ", " . "'" ."User" . "'" . ")";
           //      var_dump($queryString);
 
                 $query = mysqli_query($connection, $queryString);
@@ -49,8 +40,9 @@ $error = "Registration successful!";
             $errorMessage = $errorMessage . "Password must be between 8 and 16 characters" . "<BR>";
 
         }
+echo $error;
 
 
 
-    }
-}
+
+

@@ -11,7 +11,9 @@ $serverDatabase = "db30914";
 $response = '';
 
         $email = $_POST['inputEmail'];
+        echo $email;
         $password = $_POST['inputPassword'];
+        echo $password;
 
         //Open connection to SQL Server.
         $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
@@ -32,6 +34,6 @@ $response = '';
         }
         mysqli_close($connection);
 
-        echo json_encode(array('notify'=>$response));
+        echo $response;
 
 

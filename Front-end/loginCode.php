@@ -9,31 +9,32 @@ $serverDatabase = "db30914";
 
 //Blank error message.
 $response = '';
+if (!empty($_POST['inputEmail']) && !empty($_POST['inputPassword'])) {
+    $email = $_POST['inputEmail'];
+    echo $email;
+    $password = $_POST['inputPassword'];
+    echo $password;
 
-        $email = $_POST['inputEmail'];
-        echo $email;
-        $password = $_POST['inputPassword'];
-        echo $password;
+    //Open connection to SQL Server.
+    $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
-        //Open connection to SQL Server.
-        $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
+    //SQL Query. Typed out here for clarity.
+    $email = mysqli_real_escape_string($connection, $email);
+    $queryString = "SELECT User_ID, password FROM User WHERE User_ID";
+    $queryString .= "=" . "'" . $email . "'" . " " . "AND password=" . "'" . $password . "'";
 
-        //SQL Query. Typed out here for clarity.
-        $email = mysqli_real_escape_string($connection, $email);
-        $queryString = "SELECT User_ID, password FROM User WHERE User_ID";
-        $queryString .= "=". "'". $email . "'" . " " ."AND password=" ."'". $password."'";
-        
-	    $query = mysqli_query($connection, $queryString);
-         
-        $rows = mysqli_num_rows($query);
+    $query = mysqli_query($connection, $queryString);
 
-        if ($rows == 1) {
-            $response = "success";
-        } else {
- 	        $response = "invalid";
-        }
-        mysqli_close($connection);
+    $rows = mysqli_num_rows($query);
 
-        echo $response;
+    if ($rows == 1) {
+        $response = "success";
+    } else {
+        $response = "invalid";
+    }
+    mysqli_close($connection);
+
+    echo $response;
 
 
+}

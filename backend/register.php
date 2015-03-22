@@ -1,5 +1,13 @@
-$uname = $_POST['username'];
-$pword = $_POST['password'];
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+$uname = $_POST['inputEmail'];
+$pword = $_POST['inputPassword'];
 
 $uname = htmlspecialchars($uname);
 $pword = htmlspecialchars($pword);
@@ -32,7 +40,7 @@ $errorMessage = $errorMessage . "Password must be between 8 and 16 characters" .
 
 $user_name = "u30914";
 $pass_word = "AfzMyGF4c7";
-$database = "User";
+$database = "db30914";
 $server = "mysql.cs.iastate.edu";
 
 $db_handle = mysql_connect($server, $user_name, $pass_word);
@@ -43,7 +51,7 @@ if ($db_found) {
 }
 
 
-$SQL = "SELECT * FROM login WHERE L1 = $uname";
+$SQL = "SELECT * FROM login WHERE UserID = $uname";
 $result = mysql_query($SQL);
 $num_rows = mysql_num_rows($result);
 
@@ -57,7 +65,7 @@ else {
 }
 
 
-$SQL = "INSERT INTO User (L1, L2) VALUES ($uname, $pword)";
+$SQL = "INSERT INTO User (UserID, password) VALUES ($uname, $pword)";
 
 $result = mysql_query($SQL);
 

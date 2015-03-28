@@ -17,10 +17,9 @@ var WaterFull = {
           {imgUrl:'images/15.jpg',link:'javascript:void(0)',title:'14'}
           ],
     createChild:function(link,imagesUrl,title){
-        var str = '<p>First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First </p>';
         var div = document.createElement('div');
-        div.className = 'water';
-        div.innerHTML = str; 
+        div.className = 'water'; 
+        //div.innerHTML = y;
         return div;
     },
     on:function(element, type, func) {

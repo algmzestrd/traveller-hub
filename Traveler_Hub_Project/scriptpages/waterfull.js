@@ -18,32 +18,14 @@ var WaterFull = {
           {imgUrl:'images/14.jpg',link:'javascript:void(0)',title:'13'},
           {imgUrl:'images/15.jpg',link:'javascript:void(0)',title:'14'}
           ],
-<<<<<<< HEAD
     createChild:function(link,title){
         var str = '<p>First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First </p>';
         var div = document.createElement('div');
         div.className = 'water';
         div.innerHTML = str; 
         var dataSpan = document.createElement('span');
-
-        function goodplus(gindex)
-        {
-              flag = 1;
-              num = 1;
-              if(checkcookie(gindex) == true){
-              num = num + 1;
-              senddata(gindex);
-              }
-              else{
-                alert("You Have clicked the Join") 
-              }
-
-              return false;
-        }
         var btn = document.createElement("BUTTON");
-
         btn.setAttribute('onclick', 'goodplus(1);');
-        btn.onClick = goodplus(1);
         var t = document.createTextNode("Join us");       // Create a text node
         btn.appendChild(t);
         dataSpan.innerHTML = 0;
@@ -57,11 +39,18 @@ var WaterFull = {
         {
           senddata(i); 
         }
- 
-        
-        
-//JQuery
-
+        function goodplus(gindex)
+        {
+              flag = 1;
+              num = parseInt(span.item(gindex-1).innerHTML);
+              if(checkcookie(gindex) == true){
+              num = num + 1;
+              senddata(gindex);
+              }
+              else{
+                alert("You Have clicked the Join") 
+              }              
+        }
         function senddata(aindex)
         {
           var xmlhttp;
@@ -123,12 +112,6 @@ var WaterFull = {
             exdate.setDate( exdate.getDate() + expiredays )
             document.cookie = c_name + "=" + escape(value) + ((expiredays==null) ? "" : "; expires=" + exdate.toGMTString())
         }
-=======
-    createChild:function(link,imagesUrl,title){
-        var div = document.createElement('div');
-        div.className = 'water'; 
-        //div.innerHTML = y;
->>>>>>> 18e75c1b9ebef41dc3edec87b636a33d75d95440
         return div;
     },
 

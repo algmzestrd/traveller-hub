@@ -18,6 +18,7 @@ var WaterFull = {
           {imgUrl:'images/14.jpg',link:'javascript:void(0)',title:'13'},
           {imgUrl:'images/15.jpg',link:'javascript:void(0)',title:'14'}
           ],
+<<<<<<< HEAD
     createChild:function(link,title){
         var str = '<p>First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First </p>';
         var div = document.createElement('div');
@@ -122,6 +123,12 @@ var WaterFull = {
             exdate.setDate( exdate.getDate() + expiredays )
             document.cookie = c_name + "=" + escape(value) + ((expiredays==null) ? "" : "; expires=" + exdate.toGMTString())
         }
+=======
+    createChild:function(link,imagesUrl,title){
+        var div = document.createElement('div');
+        div.className = 'water'; 
+        //div.innerHTML = y;
+>>>>>>> 18e75c1b9ebef41dc3edec87b636a33d75d95440
         return div;
     },
 

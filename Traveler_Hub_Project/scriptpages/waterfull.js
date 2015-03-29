@@ -1,4 +1,6 @@
 
+
+
 var WaterFull = {
     $:function(id){return document.getElementById(id);},
     data:[{imgUrl:'images/02.jpg',link:'javascript:void(0)',title:'01'},
@@ -16,13 +18,115 @@ var WaterFull = {
           {imgUrl:'images/14.jpg',link:'javascript:void(0)',title:'13'},
           {imgUrl:'images/15.jpg',link:'javascript:void(0)',title:'14'}
           ],
-    createChild:function(link,imagesUrl,title){
+    createChild:function(link,title){
         var str = '<p>First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First First thing First </p>';
         var div = document.createElement('div');
         div.className = 'water';
         div.innerHTML = str; 
+        var dataSpan = document.createElement('span');
+
+        function goodplus(gindex)
+        {
+              flag = 1;
+              num = 1;
+              if(checkcookie(gindex) == true){
+              num = num + 1;
+              senddata(gindex);
+              }
+              else{
+                alert("You Have clicked the Join") 
+              }
+
+              return false;
+        }
+        var btn = document.createElement("BUTTON");
+
+        btn.setAttribute('onclick', 'goodplus(1);');
+        btn.onClick = goodplus(1);
+        var t = document.createTextNode("Join us");       // Create a text node
+        btn.appendChild(t);
+        dataSpan.innerHTML = 0;
+        div.appendChild(dataSpan);
+        btn.setAttribute("class", "btn btn-primary");
+        div.appendChild(btn);
+        var num;
+        var flag = 0;
+        var span = document.getElementsByTagName('span');
+        for(var i = 1; i < span.length + 1; i++)
+        {
+          senddata(i); 
+        }
+ 
+        
+        
+//JQuery
+
+        function senddata(aindex)
+        {
+          var xmlhttp;
+          var txt;
+          if(window.XMLHttpRequest){
+          xmlhttp=new XMLHttpRequest();
+          }else{
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+              if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+              {
+                txt = xmlhttp.responseText;
+                var cookieindex = aindex - 1;
+                document.getElementsByTagName('span').item(cookieindex).innerHTML = txt;
+              }
+          }
+            xmlhttp.open("GET","/ajax/json/index.php?num=" + num + '&flag=' + flag + '&aindex=' + aindex,true);
+            xmlhttp.send();
+        }
+        function checkcookie(gindex)
+        {
+            var thiscookie = 'sdcity_foodmap_goodplus' + gindex;
+            var mapcookie = getCookie(thiscookie)
+            if (mapcookie!=null && mapcookie!=""){
+              return false;
+            }
+            else 
+            {
+              setCookie(thiscookie,thiscookie,365);
+              return true;
+            } 
+        }
+  
+
+        function getCookie(c_name)
+        {
+          if (document.cookie.length > 0)
+          {
+              c_start = document.cookie.indexOf(c_name + "=");
+              if (c_start != -1)
+              {
+                c_start = c_start + c_name.length + 1 ;
+                c_end = document.cookie.indexOf(";" , c_start);
+                 if (c_end == -1) {
+                  c_end = document.cookie.length;
+                }
+                return unescape(document.cookie.substring(c_start , c_end));
+              } 
+          }
+          return "";
+        }
+ 
+        function setCookie(c_name,value,expiredays)
+        {
+
+            var exdate=new Date();
+            exdate.setDate( exdate.getDate() + expiredays )
+            document.cookie = c_name + "=" + escape(value) + ((expiredays==null) ? "" : "; expires=" + exdate.toGMTString())
+        }
         return div;
     },
+
+
+
     on:function(element, type, func) {
         if (element.addEventListener) {
             element.addEventListener(type, func, false); 
@@ -67,7 +171,7 @@ var WaterFull = {
 			rows[k].appendChild(div);
         }
     },
-	onScroll:function(){
+	 onScroll:function(){
         
         var height = WaterFull.getPageHeight();
         var scrollTop = WaterFull.getScrollTop();

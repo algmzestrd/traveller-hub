@@ -1,17 +1,15 @@
 <?php
-$server = "mysql.cs.iastate.edu:3306";
-$serverUser = "u30914";
-$serverPassword = "AfzMyGF4c7";
-$serverDatabase = "db30914";
 
-$connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
+session_start();
 
-$queryString = "SELECT Title, Content, Participants FROM Activity";
+if(!isset($_SESSION['user']))
+{
+    header("Location: loginPage.html");
+}
 
-$query = mysqli_query($connection, $queryString);
-
-$numberOfActivities = mysql_num_rows($query);
+header('Content-Type: text/html; charset=UTF-8');
 ?>
+
 <!doctype html>
 <html>
     <head>

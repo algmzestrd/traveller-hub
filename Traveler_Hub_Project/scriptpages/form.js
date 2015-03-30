@@ -55,3 +55,11 @@ function reset(){
 document.getElementById('categories1').innerHTML = '';
 document.getElementById('categories2').innerHTML = '';
 }
+
+function setQuestion(){
+    document.getElementById("submitButton").setAttribute("name","question");
+}
+
+function setReview(){
+    document.getElementById("submitButton").setAttribute("name","review");
+}

@@ -25,10 +25,10 @@ $(document).ready(function(){
         }else {
             $.post("loginCode.php",{ inputEmail:email, inputPassword:password}, function(data) {
                    if(data =='success'){
-                       window.location.replace("main_page.html");
+                       window.location.replace("main_page.php");
                     } else if(data=='invalid'){
                    //     $("form")[0].reset();
-                        $("#error").text("Failure..");
+                        $("#error").text("Incorrect Email or Password");
                        return false;
                     } else{
                         alert(data);

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 //Information for SQL Server. Stored in variables for clarity.
 $server = "mysql.cs.iastate.edu:3306";
 $serverUser = "u30914";

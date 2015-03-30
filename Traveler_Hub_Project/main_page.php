@@ -6,14 +6,18 @@
           <link rel = "stylesheet" href="stylepages/color.css">
           <link rel = "stylesheet" href="stylepages/style.css">
     </head>
-    <script>
-        var user_id = "<?php echo isset($_SESSION['user']); ?>";
-        if(!user_id)
-        {
-            window.location.replace("loginPage.html");
-        }
-    </script>
-    <script type="text/javascript">
+<?php
+
+session_start();
+
+if(!isset($_SESSION['user']))
+{
+    header("Location: loginPage.html");
+}
+
+header('Content-Type: text/html; charset=UTF-8');
+?>
+<script>
 
 var slideimages = new Array() // create new array to preload images
 slideimages[0] = new Image() // create new instance of image object
@@ -66,6 +70,7 @@ a:hover {
         			</form>
         		</div>
       			<ul class="nav navbar-nav navbar-left">
+
       				<li><img alt="Brand" src="Materials/user.png" height="30" width="30" style = "margin-top: 12px"></li>
       				<li><a href="#">My Account</a></li>
         			<li class="dropdown">
@@ -78,7 +83,11 @@ a:hover {
             				<li><a href="#">About Us</a></li>
           				</ul>
         			</li>
+
         			<li role = "presentation" class = "active"><iframe src="http://free.timeanddate.com/clock/i4k62t3m/n76/fcfff/tct/pct/pa9/tt0/tm1/ta1/tb4" frameborder="0" width="184" height="50" allowTransparency="true"></iframe></li>
+                    <form action="logout.php">
+                        <input type="submit" value="Logout">
+                    </form>
       			</ul>
   			</div>
 		</nav>

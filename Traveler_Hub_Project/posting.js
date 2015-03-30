@@ -5,7 +5,19 @@ $(document).ready(function(){
     $("#submitPost").click(function(){
         var title = $("#usr").val();
         var description = $("#comment").val();
-        var activityID = Math.floor(Math.random()*10001)
+        var location = "";
+        var limit = "";
+        var ID = Math.floor(Math.random()*10001);
+        if($("#submitPost").attr('name') == "activity") {
+            location = $("#location").val();
+            limit = $("#limit").val();
+            var type = "activity";
+        }
+        else
+        {
+            var type = $("#submitPost").attr('name');
+        }
+
 
 // Checking for blank fields.
         if( title =='' || description ==''){
@@ -42,7 +54,7 @@ $(document).ready(function(){
             }
             var time = curr_hour + ":" + curr_min;
 
-            $.post("postingCode.php",{ title:title, description:description, id:activityID, time:time}, function(data) {
+            $.post("postingCode.php",{ title:title, description:description, id:ID, time:time, location:location, limit:limit, type:type}, function(data) {
                 if(data =='success'){
                     location.reload();
                 }else{

@@ -11,20 +11,23 @@ $serverDatabase = "db30914";
 $error = '';
         $title = $_POST['title'];
         $description = $_POST['description'];
-        $date = $_POST['date'];
+        $id = $_POST['id'];
+        $user = $_SESSION['user'];
 
         //Open connection to SQL Server.
         $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
         //SQL Query. Typed out here for clarity.
-        $queryString = "INSERT INTO Activity (Title, Content VALUES (";
-        $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ")";
+        $queryString = "INSERT INTO Activity (Title, Content, User_ID, Activity_ID, Participants) VALUES (";
+        $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $id . "'" . ", " . "'" . 1 . "'" . ")";
+
 
         $query = mysqli_query($connection, $queryString);
 
         if(!$query)
         {
-            $error = "Please try again. No special characters or duplicate events!";
+            $error = var_dump($queryString);
+            //$error = "Please try again. No special characters or duplicate events!";
         }
         else{
             $error = "success";

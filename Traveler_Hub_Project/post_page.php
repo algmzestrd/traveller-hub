@@ -8,6 +8,19 @@ if(!isset($_SESSION['user']))
 }
 
 header('Content-Type: text/html; charset=UTF-8');
+
+$server = "mysql.cs.iastate.edu:3306";
+$serverUser = "u30914";
+$serverPassword = "AfzMyGF4c7";
+$serverDatabase = "db30914";
+
+$connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
+
+$queryString = "SELECT * FROM Activity";
+
+$query = mysqli_query($connection, $queryString);
+
+$numberOfActivities = $query->num_rows;
 ?>
 
 <!doctype html>
@@ -65,7 +78,7 @@ header('Content-Type: text/html; charset=UTF-8');
 		<a href="post_editing_page.html" rel="ajaxpanel"><button type="button" class="btn btn-primary">Post</button></a>
 		</div>
 		
-		<!-- Start waterfull here -->
+		<!-- Start waterfall here -->
 		
 		<div id="warp" class="warp">
     <div class="full" id="row1">

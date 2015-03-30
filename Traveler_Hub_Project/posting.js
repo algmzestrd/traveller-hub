@@ -71,7 +71,7 @@ $(document).ready(function(){
 
             $.post("postingCode.php",{ title:title, description:description, id:ID, time:time, location:location, limit:limit, type:type}, function(data) {
                 if(data =='success'){
-                    location.reload();
+                    window.location.href = window.location.href;
                 }else{
                     $("#error").text(data);
                 }

@@ -9,24 +9,16 @@ $serverDatabase = "db30914";
 
 //Blank error message.
 $error = '';
-
-//If stuff has been submitted..
-if(isset($_POST['posting'])) {
-    //If either field is empty...
-    if (empty($_POST['title']) || empty($_POST['description']) || empty($_POST['participants']) || empty($_POST['date'])) {
-        $error = "Please complete all fields!";
-    } else {
         $title = $_POST['title'];
         $description = $_POST['description'];
-        $participants = $_POST['participants'];
         $date = $_POST['date'];
 
         //Open connection to SQL Server.
         $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
         //SQL Query. Typed out here for clarity.
-        $queryString = "INSERT INTO Activity (Title, Content, Participants, Post_Time) VALUES (";
-        $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $participants . "'" . ", " . "'" . $date . "'" . ")";
+        $queryString = "INSERT INTO Activity (Title, Content VALUES (";
+        $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ")";
 
         $query = mysqli_query($connection, $queryString);
 
@@ -35,13 +27,14 @@ if(isset($_POST['posting'])) {
             $error = "Please try again. No special characters or duplicate events!";
         }
         else{
-            $error = "Posting successful!";
+            $error = "success";
         }
 
-//        var_dump(mysqli_error($connection));
+        echo $error;
+
         mysqli_close($connection);
 
-    }
 
-    }
+
+
 

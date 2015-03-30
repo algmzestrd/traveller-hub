@@ -5,6 +5,8 @@ $(document).ready(function(){
 
     var jsonObj = "";
 
+
+
     $.post("getActivities.php",{}, function(data) {
         if(data != ""){
             jsonObj = $.parseJSON(data);

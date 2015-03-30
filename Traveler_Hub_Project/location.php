@@ -102,7 +102,7 @@ session_start();
 
 if(!isset($_SESSION['user']))
 {
-    header("Location: login.html");
+    header("Location: loginPage.html");
 }
 
 header('Content-Type: text/html; charset=UTF-8');?>

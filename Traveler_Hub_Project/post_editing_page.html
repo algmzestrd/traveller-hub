@@ -1,12 +1,20 @@
 <!doctype html>
 <html>
     <head>
+        <script>
+            var user_id = "<?php echo isset($_SESSION['user']); ?>";
+            if(!user_id)
+            {
+                window.location.replace("loginPage.html");
+            }
+        </script>
     <title>Travelers' Hub Post Editing</title>
           <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
           <link rel = "stylesheet" href="stylepages/color.css">
           <link rel = "stylesheet" href="stylepages/style.css">	
           <script src="scriptpages/form.js" type="text/javascript"></script>
     </head>
+
     <body>
 <div class="form-group">
   <label for="usr">Title:</label>

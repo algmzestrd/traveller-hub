@@ -5,7 +5,14 @@
           <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
           <link rel = "stylesheet" href="stylepages/color.css">
           <link rel = "stylesheet" href="stylepages/style.css">
-    </head> 
+    </head>
+    <script>
+        var user_id = "<?php echo isset($_SESSION['user']); ?>";
+        if(!user_id)
+        {
+            window.location.replace("loginPage.html");
+        }
+    </script>
     <script type="text/javascript">
 
 var slideimages = new Array() // create new array to preload images
@@ -17,6 +24,7 @@ slideimages[2] = new Image()
 slideimages[2].src = "Materials/login_pic3.jpg"
 
 </script>
+
     
 <style>
     .crop {

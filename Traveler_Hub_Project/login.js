@@ -25,7 +25,7 @@ $(document).ready(function(){
         }else {
             $.post("loginCode.php",{ inputEmail:email, inputPassword:password}, function(data) {
                    if(data =='success'){
-                       $("#error").text("Success!");
+                       window.location.replace("main_page.html");
                     } else if(data=='invalid'){
                    //     $("form")[0].reset();
                         $("#error").text("Failure..");

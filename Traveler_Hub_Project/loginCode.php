@@ -25,6 +25,7 @@ $serverDatabase = "db30914";
 
     if ($rows == 1) {
         $response = "success";
+        $_SESSION['user'] = $email;
     } else {
         $response = "invalid";
     }

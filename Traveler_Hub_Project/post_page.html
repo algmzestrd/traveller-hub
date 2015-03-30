@@ -1,6 +1,13 @@
   <!doctype html>
 <html>
     <head>
+        <script>
+            var user_id = "<?php echo isset($_SESSION['user']); ?>";
+            if(!user_id)
+            {
+                window.location.replace("loginPage.html");
+            }
+        </script>
     <title>Travelers' Hub Posts List</title>
           <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
           <link rel = "stylesheet" type="text/css" href="stylepages/color.css">

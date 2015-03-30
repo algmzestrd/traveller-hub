@@ -33,6 +33,11 @@ $error = '';
             $error = "success";
         }
 
+        $queryString = "INSERT INTO Participate (Activity_ID, User_ID) VALUES (";
+        $queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" .")";
+
+        $query = mysqli_query($connection, $queryString);
+
         echo $error;
 
         mysqli_close($connection);

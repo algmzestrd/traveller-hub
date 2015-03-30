@@ -15,11 +15,24 @@ $queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" .")";
 
 $query = mysqli_query($connection, $queryString);
 
-$queryString = "SELECT Participants FROM Activity WHERE Activity_ID=";
-$queryString .= "'" . $id . "'";
+if(mysqli_error($connection) == "") {
 
-$query = mysqli_query($connection, $queryString);
+    $queryString = "SELECT Participants FROM Activity WHERE Activity_ID=";
+    $queryString .= "'" . $id . "'";
 
+    $query = mysqli_query($connection, $queryString);
 
+    $result = $query->fetch_all(MYSQLI_NUM);
+
+    $participants = $result[0][0];
+    $participants += 1;
+
+    $queryString = "UPDATE Activity SET Participants=";
+    $queryString .= "'" . $participants . "' ";
+    $queryString .= "WHERE Activity_ID=";
+    $queryString .= "'" . $id . "'";
+    $query = mysqli_query($connection, $queryString);
+}
 
 echo "done";
+

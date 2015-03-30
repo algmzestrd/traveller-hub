@@ -16,6 +16,7 @@ document.getElementById("categories1").appendChild(y);
 function Location_TextArea(){
 var y = document.createElement("TEXTAREA");
 y.setAttribute("type", "text");
+    y.setAttribute("id", "location");
 y.setAttribute("placeholder", "Enter the Activity Location");
 y.setAttribute("Name", "textelement_" + i);
 y.setAttribute("class", "form-control");
@@ -34,7 +35,8 @@ document.getElementById("categories2").appendChild(y);
 function NumberPeople_TextArea(){
 var y = document.createElement("TEXTAREA");
 y.setAttribute("type", "text");
-y.setAttribute("placeholder", "Specify the Limit of the Number of Participants of the Activity");
+    y.setAttribute("id", "limit");
+y.setAttribute("placeholder", "Specify the Limit of the Number of Participants");
 y.setAttribute("Name", "textelement_" + i);
 y.setAttribute("class", "form-control");
 document.getElementById("categories2").appendChild(y);

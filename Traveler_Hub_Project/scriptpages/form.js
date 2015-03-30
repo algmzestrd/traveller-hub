@@ -43,14 +43,6 @@ document.getElementById("categories2").appendChild(y);
 /* -------------------------------------------------------------------- */
 
 
-function Submit(){
-var y = document.createElement("BUTTON");
-var t = document.createTextNode("Click me");
-y.appendChild(t);
-y.setAttribute("class", "btn btn-primary");
-document.getElementById("categories").appendChild(y);
-}
-
 function reset(){
 document.getElementById('categories1').innerHTML = '';
 document.getElementById('categories2').innerHTML = '';

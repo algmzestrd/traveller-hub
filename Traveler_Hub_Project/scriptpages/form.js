@@ -57,9 +57,9 @@ document.getElementById('categories2').innerHTML = '';
 }
 
 function setQuestion(){
-    document.getElementById("submitButton").setAttribute("name","question");
+    document.getElementById("submitPost").setAttribute("name","question");
 }
 
 function setReview(){
-    document.getElementById("submitButton").setAttribute("name","review");
+    document.getElementById("submitPost").setAttribute("name","review");
 }

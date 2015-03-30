@@ -13,13 +13,17 @@ $error = '';
         $description = $_POST['description'];
         $id = $_POST['id'];
         $user = $_SESSION['user'];
+        $time = $_POST['time'];
+        $object = new DateTime("now");
+        $date = $object->format("m-d-Y");
 
         //Open connection to SQL Server.
         $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
         //SQL Query. Typed out here for clarity.
-        $queryString = "INSERT INTO Activity (Title, Content, User_ID, Activity_ID, Participants) VALUES (";
-        $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $id . "'" . ", " . "'" . 1 . "'" . ")";
+        $queryString = "INSERT INTO Activity (Title, Content, User_ID, Activity_ID, Participants, Post_Time, Post_Date) VALUES (";
+        $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $id . "'" . ", " . "'" . 1 . "'". ", " . "'" . $time . "'";
+        $queryString .= ", " . "'" . $date . "'" . ")";
 
 
         $query = mysqli_query($connection, $queryString);
@@ -33,8 +37,9 @@ $error = '';
             $error = "success";
         }
 
-        $queryString = "INSERT INTO Participate (Activity_ID, User_ID) VALUES (";
-        $queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" .")";
+        $queryString = "INSERT INTO Participate (Activity_ID, User_ID, Join_Time, Join_Date) VALUES (";
+        $queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" . ", " . "'" . $time . "'";
+        $queryString .= ", " . "'" . $date . "')";
 
         $query = mysqli_query($connection, $queryString);
 

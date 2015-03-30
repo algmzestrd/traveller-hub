@@ -9,9 +9,10 @@ $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatab
 
 $id = $_POST['id'];
 $user = $_SESSION['user'];
+$time = $_POST['time'];
 
-$queryString = "INSERT INTO Participate (Activity_ID, User_ID) VALUES (";
-$queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" .")";
+$queryString = "INSERT INTO Participate (Activity_ID, User_ID, Join_Time) VALUES (";
+$queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" . ", " . "'" . $time . "'"  .")";
 
 $query = mysqli_query($connection, $queryString);
 

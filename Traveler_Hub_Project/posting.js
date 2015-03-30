@@ -12,7 +12,37 @@ $(document).ready(function(){
             $("#error").text("Please fill all fields");
             return false;
         }else {
-            $.post("postingCode.php",{ title:title, description:description, id:activityID}, function(data) {
+            var date = new Date();
+            var curr_hour = date.getHours();
+            var curr_min = date.getMinutes();
+            if(curr_min < 10)
+            {
+                curr_min = "0" + curr_min;
+            }
+            if(curr_hour > 12)
+            {
+                curr_hour = curr_hour - 12;
+                curr_min = curr_min + "PM";
+
+            }
+            else {
+                if(curr_hour != 0 && curr_hour != 12)
+                {
+                    curr_min = curr_min + "AM";
+                }
+                else if(curr_hour == 12)
+                {
+                    curr_min = curr_min + "PM";
+                }
+                else
+                {
+                    curr_hour = 12;
+                    curr_min = curr_min + "AM";
+                }
+            }
+            var time = curr_hour + ":" + curr_min;
+
+            $.post("postingCode.php",{ title:title, description:description, id:activityID, time:time}, function(data) {
                 if(data =='success'){
                     location.reload();
                 }else{

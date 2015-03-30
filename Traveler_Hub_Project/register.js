@@ -27,7 +27,7 @@ $(document).ready(function(){
                 if(data =='Email or password is already taken.'){
                     $("#error").text(data);
                     return false;
-                } else if(data=='Registration successful!'){
+                } else if(data == 'Registration successful!'){
                     //     $("form")[0].reset();
                     $("#error").text(data);
                     return false;

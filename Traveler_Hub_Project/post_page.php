@@ -54,6 +54,9 @@ header('Content-Type: text/html; charset=UTF-8');
           				</ul>
         			</li>
         			<li role = "presentation" class = "active"><iframe src="http://free.timeanddate.com/clock/i4k62t3m/n76/fcfff/tct/pct/pa9/tt0/tm1/ta1/tb4" frameborder="0" width="184" height="50" allowTransparency="true"></iframe></li>
+                    <form action="logout.php">
+                        <input type="submit" value="Logout">
+                    </form>
       			</ul>
   			</div>
 		</nav>

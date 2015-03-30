@@ -9,13 +9,10 @@ $serverPassword = "AfzMyGF4c7";
 $serverDatabase = "db30914";
 $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
-//Blank error message.
 
         $email = $_POST['inputEmail'];
         $password = $_POST['inputPassword'];
         $passwordLength = strlen($password);
-
-        if ($passwordLength >= 4 && $passwordLength <= 8) {
                 //Open connection to SQL Server.
                 $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
@@ -35,13 +32,8 @@ $error = "Registration successful!";
                  }
                 mysqli_close($connection);
 
-        }
-        else {
 
-            $errorMessage = $errorMessage . "Password must be between 8 and 16 characters" . "<BR>";
-
-        }
-echo $error;
+echo $queryString;
 
 
 

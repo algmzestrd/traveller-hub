@@ -15,4 +15,11 @@ $queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" .")";
 
 $query = mysqli_query($connection, $queryString);
 
-echo $queryString;
+$queryString = "SELECT Participants FROM Activity WHERE Activity_ID=";
+$queryString .= "'" . $id . "'";
+
+$query = mysqli_query($connection, $queryString);
+
+
+
+echo "done";

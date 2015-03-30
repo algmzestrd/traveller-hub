@@ -79,12 +79,12 @@ $numberOfActivities = $query->num_rows;
 		</div>
 		
 		<!-- Start waterfall here -->
-		
+
 		<div id="warp" class="warp">
     <div class="full" id="row1">
         <div class="water">
             <a href="javascript:void(0)"><img src="Materials/01.JPG" alt=""></a>
-            
+
         </div>
         <div class="water">
             <p><?php
@@ -95,11 +95,11 @@ $numberOfActivities = $query->num_rows;
 
 
                 ?></p>
-           
+
         </div>
         <div class="water">
             <img src="Materials/09.JPG" alt="">
-            
+
         </div>
         <div class="water">
             <p><?php
@@ -110,28 +110,30 @@ $numberOfActivities = $query->num_rows;
 
 
                 ?></p>
-            
+
         </div>
     </div>
     <div class="full" id="row2">
         <div class="water">
             <img src="Materials/03.jpg" alt="">
-           
+
         </div>
         <div class="water">
             <p><?php
                 if($numberOfActivities >= 3)
-                {}
+                {
+                    echo "HELLO";
+                }
                 else{}
 
 
 
                 ?></p>
-            
+
         </div>
         <div class="water">
             <img src="Materials/10.JPG" alt="">
-            
+
         </div>
         <div class="water">
             <p><?php
@@ -142,13 +144,13 @@ $numberOfActivities = $query->num_rows;
 
 
                 ?></p>
-           
+
         </div>
     </div>
     <div class="full" id="row3">
         <div class="water">
             <img src="Materials/05.JPG" alt="">
-            
+
         </div>
         <div class="water">
             <p><?php
@@ -159,11 +161,11 @@ $numberOfActivities = $query->num_rows;
 
 
                 ?></p>
-           
+
         </div>
         <div class="water">
             <img src="Materials/11.JPG" alt="">
-           
+
         </div>
         <div class="water">
             <p><?php
@@ -174,17 +176,17 @@ $numberOfActivities = $query->num_rows;
 
 
                 ?></p>
-            
+
         </div>
     </div>
     <div class="full last" id="row4">
         <div class="water">
             <img src="Materials/07.JPG" alt="">
-            
+
         </div>
         <div class="water">
             <img src="Materials/08.JPG" alt="">
-            
+
         </div>
         <div class="water">
             <p><?php
@@ -195,11 +197,11 @@ $numberOfActivities = $query->num_rows;
 
 
                 ?></p>
-            
+
         </div>
         <div class="water">
             <img src="Materials/13.JPG" alt="">
-           
+
         </div>
     </div>
 </div>

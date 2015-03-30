@@ -46,7 +46,7 @@ if($type == "activity") {
 }
 else{
     $queryString = "INSERT INTO Post (Post_ID, Post_Time, Title, Content, User_ID, Post_Date, Post_Type) VALUES (";
-    $queryString .= "'" . $id . "'" . ", " . "'" . $time . "'" . ", " . "'" . $title . "'" . ", " . "'" . $content . "'" . ", " . "'" . $user . "'" . ", " . "'" . $date . "'";
+    $queryString .= "'" . $id . "'" . ", " . "'" . $time . "'" . ", " . "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $date . "'";
     $queryString .= ", " . "'" . $type . "')";
 
 

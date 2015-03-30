@@ -1,21 +1,36 @@
 /**
  * Created by alberto on 3/9/15.
  */
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 $(document).ready(function(){
     $("#submitPost").click(function(){
+        if($("#submitPost").attr('name') == "submit")
+        {
+            $("#error").text("Please select a type of submission.");
+            return false;
+        }
         var title = $("#usr").val();
         var description = $("#comment").val();
         var location = "";
         var limit = "";
+        var type = "";
         var ID = Math.floor(Math.random()*10001);
         if($("#submitPost").attr('name') == "activity") {
             location = $("#location").val();
             limit = $("#limit").val();
-            var type = "activity";
+            if(!isNumeric(limit))
+            {
+                $("#error").text("Please enter a numeric limit.");
+                return false;
+            }
+            type = "activity";
         }
         else
         {
-            var type = $("#submitPost").attr('name');
+            type = $("#submitPost").attr('name');
         }
 
 

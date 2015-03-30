@@ -1,26 +1,40 @@
-  <!doctype html>
+<!doctype html>
 <html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="scriptpages/ddajaxsidepanel.js"></script>
+        <script type="text/javascript" src="waterfall.js"></script>
         <script>
-            var user_id = "<?php echo isset($_SESSION['user']); ?>";
-            if(!user_id)
+            function Join()
             {
-                window.location.replace("loginPage.html");
-            }
+                var activityID = this.id;
+                $.post("joining.php",{ id:activityID}, function(data) {
+                    if(data =='done'){
+                        location.reload();
+                    }else{
+                        alert(data);
+                    }
+                })
+                        .fail(function() {
+                            alert("Could not communicate with server.");
+                        })
+            };
         </script>
     <title>Travelers' Hub Posts List</title>
           <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
           <link rel = "stylesheet" type="text/css" href="stylepages/color.css">
           <link rel = "stylesheet" type="text/css" href="stylepages/style.css">
-          <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 		  <link rel="stylesheet" type="text/css" href="scriptpages/ddajaxsidepanel.css" />
 		  <link rel = "stylesheet" type="text/css" href="stylepages/waterfall_style.css">
     </head>
     <body>
+
 		<nav class="navbar navbar-default">
   			<div class="container-fluid">
     			<div class="navbar-header">
       				<a class="navbar-brand" href="#">
+      				<img alt="Brand" src="Materials/login_picture.gif" height="45" width="60">
       				</a>
     			</div>
 
@@ -48,6 +62,9 @@
           				</ul>
         			</li>
         			<li role = "presentation" class = "active"><iframe src="http://free.timeanddate.com/clock/i4k62t3m/n76/fcfff/tct/pct/pa9/tt0/tm1/ta1/tb4" frameborder="0" width="184" height="50" allowTransparency="true"></iframe></li>
+                    <form action="logout.php">
+                        <input type="submit" value="Logout">
+                    </form>
       			</ul>
   			</div>
 		</nav>
@@ -56,31 +73,14 @@
 		<a href="post_editing_page.html" rel="ajaxpanel"><button type="button" class="btn btn-primary">Post</button></a>
 		</div>
 		
-		<!-- Start waterfull here -->
-		
+		<!-- Start waterfall here -->
+
 		<div id="warp" class="warp">
-    <div class="full" id="row1">
-        
-    </div>
-    <div class="full" id="row2">
-        
-    </div>
-    <div class="full" id="row3">
+        <span id="error"></span>
+        </div>
 
-    </div>
-    <div class="full last" id="row4">
 
-    </div>
-</div>
-		
-		
-		
+
 		<!-- End waterfull here -->
-		
-		<script type="text/javascript" src="scriptpages/waterfull.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="scriptpages/ddajaxsidepanel.js"></script>
     </body>
-    
 </html>

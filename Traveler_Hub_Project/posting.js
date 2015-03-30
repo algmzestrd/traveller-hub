@@ -14,7 +14,7 @@ $(document).ready(function(){
         }else {
             $.post("postingCode.php",{ title:title, description:description, id:activityID}, function(data) {
                 if(data =='success'){
-                    window.location.replace("post_page.php");
+                    location.reload();
                 }else{
                     $("#error").text(data);
                 }

@@ -17,6 +17,7 @@ $error = '';
         $type = $_POST['type'];
         $user = $_SESSION['user'];
         $time = $_POST['time'];
+        $seconds = $_POST['seconds'];
         $object = new DateTime("now");
         $date = $object->format("m-d-Y");
 
@@ -24,9 +25,9 @@ $error = '';
         $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 if($type == "activity") {
     //SQL Query. Typed out here for clarity.
-    $queryString = "INSERT INTO Activity (Title, Content, User_ID, Activity_ID, Participants, Post_Time, Post_Date, Participant_Limit, Location) VALUES (";
+    $queryString = "INSERT INTO Activity (Title, Content, User_ID, Activity_ID, Participants, Post_Time, Post_Date, Participant_Limit, Location, Seconds) VALUES (";
     $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $id . "'" . ", " . "'" . 1 . "'" . ", " . "'" . $time . "'";
-    $queryString .= ", " . "'" . $date . "'" . ", " . "'" . $limit . "'" . ", " . "'" . $location . "')";
+    $queryString .= ", " . "'" . $date . "'" . ", " . "'" . $limit . "'" . ", " . "'" . $location . "'" . ", " . "'" . $seconds . "')";
 
 
     $query = mysqli_query($connection, $queryString);
@@ -45,9 +46,9 @@ if($type == "activity") {
     $query = mysqli_query($connection, $queryString);
 }
 else{
-    $queryString = "INSERT INTO Post (Post_ID, Post_Time, Title, Content, User_ID, Post_Date, Post_Type) VALUES (";
+    $queryString = "INSERT INTO Post (Post_ID, Post_Time, Title, Content, User_ID, Post_Date, Post_Type, Seconds) VALUES (";
     $queryString .= "'" . $id . "'" . ", " . "'" . $time . "'" . ", " . "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $date . "'";
-    $queryString .= ", " . "'" . $type . "')";
+    $queryString .= ", " . "'" . $type . "'" . ", " . "'" . $seconds . "')";
 
 
     $query = mysqli_query($connection, $queryString);
@@ -60,6 +61,7 @@ else{
     }
 
 }
+
 
         echo $error;
 

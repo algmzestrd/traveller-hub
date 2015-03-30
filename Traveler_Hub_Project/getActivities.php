@@ -6,7 +6,7 @@ $serverDatabase = "db30914";
 
 $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
-$queryString = "SELECT * FROM Activity";
+$queryString = "SELECT * FROM Activity ORDER BY Seconds DESC";
 
 $query = mysqli_query($connection, $queryString);
 

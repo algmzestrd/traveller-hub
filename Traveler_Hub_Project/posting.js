@@ -68,8 +68,9 @@ $(document).ready(function(){
                 }
             }
             var time = curr_hour + ":" + curr_min;
+            var seconds = date.getTime();
 
-            $.post("postingCode.php",{ title:title, description:description, id:ID, time:time, location:location, limit:limit, type:type}, function(data) {
+                $.post("postingCode.php",{ title:title, description:description, id:ID, time:time, location:location, limit:limit, type:type, seconds:seconds}, function(data) {
                 if(data =='success'){
                     window.location.href = window.location.href;
                 }else{

@@ -10,7 +10,7 @@
 src="http://maps.googleapis.com/maps/api/js">
 </script>
 
-<script>
+<script type="text/javascript">
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -21,8 +21,7 @@ function getLocation() {
 function showPosition(position) {
     var latlon = position.coords.latitude + "," + position.coords.longitude;
 
-    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=
-    "+latlon+"&zoom=14&size=400x300&sensor=false";
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false";
 
     document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 }
@@ -94,7 +93,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
   
   
-    </head> 
+    </head>
+
+<?php
+
+session_start();
+
+
+if(!isset($_SESSION['user']))
+{
+    header("Location: login.html");
+}
+
+header('Content-Type: text/html; charset=UTF-8');?>
   
     <body>
 		<nav class="navbar navbar-default">

@@ -4,6 +4,7 @@ i += 1; /* Function for automatic increment of field's "Name" attribute. */
 }
 
 function Location_Label(){
+    document.getElementById("submitPost").setAttribute("name","activity");
 document.getElementById('categories1').innerHTML = '';
 var y = document.createElement("LABEL");
 var t = document.createTextNode("Location");

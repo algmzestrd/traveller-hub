@@ -26,9 +26,9 @@
 
     $query = mysqli_query($connection, $queryString);
 
-    $queryString = "INSERT INTO Profile (User_ID) VALUES(" . "'" . $email . "')";
+/*    $queryString = "INSERT INTO Profile (User_ID) VALUES(" . "'" . $email . "')";
 
-    $query = mysqli_query($connection, $queryString);
+    $query = mysqli_query($connection, $queryString);*/
 
     if(!$query) {
     $error = "Email is already registered.";

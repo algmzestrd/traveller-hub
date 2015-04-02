@@ -2,10 +2,6 @@
 
 session_start();
 
-if(!isset($_SESSION['user']))
-{
-    header("Location: loginPage.html");
-}
 //Information for SQL Server. Stored in variables for clarity.
 $server = "mysql.cs.iastate.edu:3306";
 $serverUser = "u30914";

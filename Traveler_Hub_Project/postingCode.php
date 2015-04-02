@@ -49,7 +49,7 @@
 
     $query = mysqli_query($connection, $queryString);
 
-    $queryString = "UPDATE Participate SET Activity_ID=Activity.Activity_ID FROM Activity WHERE Participate.User_ID=Activity.User_ID";
+    $queryString = "UPDATE Participate SET Activity_ID = (SELECT Activity_ID FROM Activity WHERE Participate.User_ID=Activity.User_ID AND Activity.Seconds=" . $seconds . ")";
 
     $query = mysqli_query($connection, $queryString);
 }

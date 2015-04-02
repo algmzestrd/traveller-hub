@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['user']))
+{
+    header("Location: loginPage.html");
+}
 $server = "mysql.cs.iastate.edu:3306";
 $serverUser = "u30914";
 $serverPassword = "AfzMyGF4c7";

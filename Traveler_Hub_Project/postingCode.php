@@ -17,7 +17,6 @@
 
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $id = $_POST['id'];
     $location = $_POST['location'];
     $limit = $_POST['limit'];
     $type = $_POST['type'];
@@ -44,8 +43,8 @@
         $response = "success";
     }
 
-    $queryString = "INSERT INTO Participate (Activity_ID, User_ID, Join_Time, Join_Date) VALUES (";
-    $queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" . ", " . "'" . $time . "'";
+    $queryString = "INSERT INTO Participate (User_ID, Join_Time, Join_Date) VALUES (";
+    $queryString .= "'" . $user . "'" . ", " . "'" . $time . "'";
     $queryString .= ", " . "'" . $date . "')";
 
     $query = mysqli_query($connection, $queryString);

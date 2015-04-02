@@ -13,7 +13,6 @@
 
     $email = $_POST['inputEmail'];
     $password = $_POST['inputPassword'];
-    $role = "User";
 
     $passwordLength = strlen($password);
 
@@ -22,8 +21,8 @@
     $email = mysqli_real_escape_string($connection, $email);
     $password = password_hash($password, PASSWORD_BCRYPT);
 
-    $queryString = "INSERT INTO User (User_ID , password, register_date, role) VALUES (";
-    $queryString .= "'" . $email . "'" . ", " . "'" . $password . "'" . ", " . "'" . $date . "'" . ", " . "'" . $role . "'" . ")";
+    $queryString = "INSERT INTO User (User_ID , password, register_date) VALUES (";
+    $queryString .= "'" . $email . "'" . ", " . "'" . $password . "'" . ", " . "'" . $date . "')";
 
     $query = mysqli_query($connection, $queryString);
 

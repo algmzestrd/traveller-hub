@@ -43,20 +43,17 @@
         $response = "success";
     }
 
-    $queryString = "INSERT INTO Participate (Activity_ID) SELECT Activity_ID FROM Activity";
-
-    $query = mysqli_query($connection, $queryString);
-
     $queryString = "INSERT INTO Participate (User_ID, Join_Time, Join_Date) VALUES (";
     $queryString .= "'" . $user . "'" . ", " . "'" . $time . "'";
     $queryString .= ", " . "'" . $date . "')";
 
     $query = mysqli_query($connection, $queryString);
+
+    $queryString = "UPDATE Participate SET Activity_ID=Activity.Activity_ID FROM Participate INNER JOIN Activity ON Participate.User_ID=Activity.User_ID";
+
+    $query = mysqli_query($connection, $queryString);
 }
     else {
-    $queryString = "INSERT INTO Post (Post_ID, Post_Time, Title, Content, User_ID, Post_Date, Post_Type, Seconds) VALUES (";
-    $queryString .= "'" . $id . "'" . ", " . "'" . $time . "'" . ", " . "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $date . "'";
-    $queryString .= ", " . "'" . $type . "'" . ", " . "'" . $seconds . "')";
 
     $query = mysqli_query($connection, $queryString);
 

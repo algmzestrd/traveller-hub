@@ -1,0 +1,5 @@
+Email:                      Password:
+
+algomez@iastate.edu         12345678
+shang@gmail.com             12345678
+guo@iastate.edu             13245678

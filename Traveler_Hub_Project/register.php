@@ -31,7 +31,7 @@
     $query = mysqli_query($connection, $queryString);
 
     if(!$query) {
-    $error = "Email or password is already taken.";
+    $error = "Email is already registered.";
 }
     else {
     $error = "Registration successful!";

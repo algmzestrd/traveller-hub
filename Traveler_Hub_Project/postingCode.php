@@ -31,8 +31,8 @@
 
     if ($type == "activity") {
 
-    $queryString = "INSERT INTO Activity (Title, Content, User_ID, Activity_ID, Post_Time, Post_Date, Participant_Limit, Location, Seconds) VALUES (";
-    $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $id . "'" . ", " . "'" . $time . "'";
+    $queryString = "INSERT INTO Activity (Title, Content, User_ID, Post_Time, Post_Date, Participant_Limit, Location, Seconds) VALUES (";
+    $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $time . "'";
     $queryString .= ", " . "'" . $date . "'" . ", " . "'" . $limit . "'" . ", " . "'" . $location . "'" . ", " . "'" . $seconds . "')";
 
     $query = mysqli_query($connection, $queryString);
@@ -42,6 +42,10 @@
     }   else {
         $response = "success";
     }
+
+    $queryString = "INSERT INTO Participate (Activity_ID) SELECT Activity_ID FROM Activity";
+
+    $query = mysqli_query($connection, $queryString);
 
     $queryString = "INSERT INTO Participate (User_ID, Join_Time, Join_Date) VALUES (";
     $queryString .= "'" . $user . "'" . ", " . "'" . $time . "'";

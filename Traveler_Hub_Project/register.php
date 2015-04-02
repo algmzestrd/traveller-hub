@@ -11,10 +11,11 @@ $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatab
 $object = new DateTime("now");
 $date = $object->format("m-d-Y");
 $role = "User";
+/*
 $options = [
     'cost' => 11,
     'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-];
+];*/
 
 
         $email = $_POST['inputEmail'];
@@ -25,7 +26,7 @@ $options = [
 
                 //SQL Query. Typed out here for clarity.
                 $email = mysqli_real_escape_string($connection, $email);
-                $password = password_hash($password, PASSWORD_BCRYPT, $options);
+                $password = password_hash($password, PASSWORD_BCRYPT);
                 $queryString = "INSERT INTO User (User_ID , password, register_date, role) VALUES (";
                 $queryString .= "'" . $email . "'" . ", " . "'" . $password . "'" . ", " . "'" . $date . "'" . ", " . "'" . $role . "'" . ")";
 

@@ -18,15 +18,24 @@ $serverDatabase = "db30914";
     //SQL Query. Typed out here for clarity.
     $email = mysqli_real_escape_string($connection, $email);
     $queryString = "SELECT User_ID, password FROM User WHERE User_ID";
-    $queryString .= "=" . "'" . $email . "'" . " " . "AND password=" . "'" . $password . "'";
+    $queryString .= "=" . "'" . $email . "'";
 
     $query = mysqli_query($connection, $queryString);
 
     $rows = mysqli_num_rows($query);
 
     if ($rows == 1) {
-        $response = "success";
-        $_SESSION['user'] = $email;
+        $result = $query->fetch_all(MYSQLI_NUM);
+        $hash = $result[0][1];
+
+        if(password_verify($password, $hash)) {
+            $response = "success";
+            $_SESSION['user'] = $email;
+        }
+        else
+        {
+            $response = "invalid";
+        }
     } else {
         $response = "invalid";
     }

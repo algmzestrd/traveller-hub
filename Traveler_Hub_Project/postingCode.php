@@ -49,7 +49,7 @@
 
     $query = mysqli_query($connection, $queryString);
 
-    $queryString = "UPDATE Participate SET Activity_ID=Activity.Activity_ID FROM Participate INNER JOIN Activity ON Participate.User_ID=Activity.User_ID";
+    $queryString = "UPDATE Participate SET Activity_ID=Activity.Activity_ID FROM Activity WHERE Participate.User_ID=Activity.User_ID";
 
     $query = mysqli_query($connection, $queryString);
 }

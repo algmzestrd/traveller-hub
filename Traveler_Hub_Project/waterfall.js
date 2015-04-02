@@ -21,6 +21,8 @@ $(document).ready(function(){
             var i;
 
 
+
+
             for(i = 0; i < numberOfPosts; i++)
             {
                 title = jsonObj[i][1];
@@ -28,7 +30,11 @@ $(document).ready(function(){
                 numberOfParticipants = jsonObj[i][5];
                 id = jsonObj[i][0];
                 user = jsonObj[i][3];
+                user = user.split("@");
+                user = user[0];
                 date = jsonObj[i][4];
+
+
 
                 var string = "Title:" + " " + title + "\n";
                 string += "Description:" + " " + description + "\n";

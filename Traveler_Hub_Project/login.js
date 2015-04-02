@@ -43,6 +43,13 @@ $(document).ready(function(){
     $("#registerButton").click(function(){
         var email = $("#inputEmail").val();
         var password = $("#inputPassword").val();
+        var passLen = password.length;
+
+        if(passLen < 8 || passLen > 20)
+        {
+            $("#error").text("Password must be between 8 to 20 characters");
+            return false;
+        }
 
         $('input[type="email"]').css("border", "1px solid black");
         $('input[type="email"]').css("box-shadow", "0 0 3px black");

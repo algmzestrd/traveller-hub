@@ -67,7 +67,8 @@ $(document).ready(function(){
                     return false;
                 } else if(data == 'Registration successful!'){
                     //     $("form")[0].reset();
-                    $("#error").text(data);
+                    alert(data);
+                    window.location.href = window.location.href;;
                     return false;
                 } else{
                     alert(data);

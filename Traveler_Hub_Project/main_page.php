@@ -8,14 +8,12 @@
     </head>
 <?php
 
-session_start();
+    session_start();
 
-if(!isset($_SESSION['user']))
-{
+    if(!isset($_SESSION['user'])) {
     header("Location: loginPage.html");
 }
-
-header('Content-Type: text/html; charset=UTF-8');
+    header('Content-Type: text/html; charset=UTF-8');
 ?>
 <script>
 

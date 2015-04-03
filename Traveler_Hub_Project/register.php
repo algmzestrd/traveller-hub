@@ -31,15 +31,15 @@
     $query = mysqli_query($connection, $queryString);
 
     if(!$query) {
-    $error = "Email is already registered.";
+    $response = "Email is already registered.";
 }
     else {
-    $error = "Registration successful!";
+    $response = "Registration successful!";
 }
     mysqli_close($connection);
 
 
-    echo $error;
+    echo $response;
 
 
 

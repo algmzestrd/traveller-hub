@@ -3,11 +3,9 @@
  */
 $.post("recovery.php",{email:"algomez@iastate.edu"}, function(data) {
     if(data =='success'){
-        window.location.replace("main_page.php");
-    } else if(data=='invalid'){
-        //     $("form")[0].reset();
-        $("#error").text("Incorrect Email or Password");
-        return false;
+        alert("Success");
+    } else if(data=='failure'){
+        alert("Failure");
     } else{
         alert(data);
     }

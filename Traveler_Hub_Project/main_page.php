@@ -114,7 +114,7 @@ a:hover {
     </a>
   </div>
   <div class="col-md-3">
-    <a href="cinqueterre.jpg" class="thumbnail">
+    <a href="InProgress.html" class="thumbnail">
       <h1 style = "text-align:center">How to ask for help?</h1>
       <img src="Materials/login_pic3.jpg" alt="Cinque Terre" style="width:100%;height:100%">
     </a>

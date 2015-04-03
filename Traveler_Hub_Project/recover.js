@@ -2,7 +2,10 @@
  * Created by alberto on 4/2/15.
  */
 function Mail() {
-    $.post("recovery.php", {email: "algomez@iastate.edu"}, function (data) {
+
+    var recoveryCode = Math.floor(Math.random()*10001);
+
+    $.post("recovery.php", {email: "algomez@iastate.edu", code:recoveryCode}, function (data) {
         if (data == 'success') {
             alert("Success");
         } else if (data == 'failure') {

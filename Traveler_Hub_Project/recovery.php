@@ -15,4 +15,11 @@ $headers = 'From: thetravelerhubteam@gmail.com' . "\r\n" .
     'Reply-To: thetravelerhubteam@gmail.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-mail($to, $subject, $message, $headers);
+if(mail($to, $subject, $message, $headers))
+{
+    echo "success";
+}
+else
+{
+    echo "failure";
+}

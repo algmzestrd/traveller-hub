@@ -18,15 +18,15 @@ function Recover() {
 function Mail() {
 
     var recoveryCode = Math.floor(Math.random()*10001);
-    var email = $("#inputEmail").val();
+    var inputEmail = $("#inputEmail").val();
 
-    if(email == "")
+    if(inputEmail == '')
     {
         $("#error").text("Please enter an email address");
         return false;
     }
 
-    $.post("recovery.php", {email:email, code:recoveryCode}, function (data) {
+    $.post("recovery.php", {email:inputEmail, code:recoveryCode}, function (data) {
         if (data == 'success') {
             alert("Thank you. If an account is associated with this email, you will receive instructions at that email shortly.");
             window.location.href = window.location.href;
@@ -39,7 +39,7 @@ function Mail() {
         }
     })
         .fail(function () {
-            alert("error");
-            window.location.href = window.location.href;
+            $("error").html(data);
+//            window.location.href = window.location.href;
         })
 }

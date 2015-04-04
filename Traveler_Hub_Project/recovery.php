@@ -17,9 +17,9 @@ $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatab
 $to      = $_POST['email'];
 $code    = $_POST['code'];
 
-$email = mysqli_real_escape_string($connection, $to);
+$to = mysqli_real_escape_string($connection, $to);
 
-$queryString = "INSERT INTO Recovery (User_ID, Code) VALUES(" . "'" . $email . "'" . ", " . "'" . $code . "')";
+$queryString = "INSERT INTO Recovery (User_ID, Code) VALUES(" . "'" . $to . "'" . ", " . "'" . $code . "')";
 
 $query = mysqli_query($connection, $queryString);
 
@@ -30,7 +30,7 @@ $headers = 'From: thetravelerhubteam@gmail.com' . "\r\n" .
     'Reply-To: thetravelerhubteam@gmail.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-if(mail($email, $subject, $message, $headers))
+if(mail($to, $subject, $message, $headers))
 {
     echo "success";
 }

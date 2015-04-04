@@ -8,7 +8,7 @@ function Recover() {
     $("#inputPassword").hide();
     $("#submitButton").html("<b>Submit</b>");
     $("#recover").hide();
-    $("#error").text("Please enter the email associated with the account and submit.");
+    $("#error").text("Please enter the email address associated with the account and submit.");
     $("#submitButton").unbind("click").click(Mail);
 
 }

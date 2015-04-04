@@ -38,8 +38,8 @@ function Mail() {
             window.location.href = window.location.href;
         }
     })
-        .fail(function () {
-            $("error").html(data);
+        .fail(function (data) {
+            $("#error").html(data);
 //            window.location.href = window.location.href;
         })
 }

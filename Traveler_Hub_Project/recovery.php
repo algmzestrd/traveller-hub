@@ -17,9 +17,15 @@ $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatab
 $to      = $_POST['email'];
 $code    = $_POST['code'];
 
+$code = password_hash($code, PASSWORD_BCRYPT);
+
 $to = mysqli_real_escape_string($connection, $to);
 
 $queryString = "INSERT INTO Recovery (User_ID, Code) VALUES(" . "'" . $to . "'" . ", " . "'" . $code . "')";
+
+$query = mysqli_query($connection, $queryString);
+
+$queryString = "UPDATE User SET Recovery=1, Recovery_Password=" . "'" . $code . "' WHERE User_ID='" . $_POST['email'] . "'";
 
 $query = mysqli_query($connection, $queryString);
 

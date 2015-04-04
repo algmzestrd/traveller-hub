@@ -30,7 +30,7 @@ $queryString = "UPDATE User SET Recovery=1, Recovery_Password=" . "'" . $code . 
 $query = mysqli_query($connection, $queryString);
 
 $subject = 'Traveler Hub Password Reset Request';
-$message = 'Hello, You have requested a new password.';
+$message = 'Hello, You have requested a temporary password. Please sign on using ' . $_POST['code'] . ' as your password.';
 
 if(mail($_POST['email'], $subject, $message)) {
     echo "success";

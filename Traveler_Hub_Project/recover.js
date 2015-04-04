@@ -30,16 +30,21 @@ function Mail() {
         if (data == 'success') {
             alert("Thank you. If an account is associated with this email, you will receive instructions at that email shortly.");
             window.location.href = window.location.href;
+            return false;
         } else if (data == 'failure') {
             alert("There was an error while completing your request. Please try again.");
             window.location.href = window.location.href;
+            return false;
         } else {
             alert(data);
             window.location.href = window.location.href;
+            return false;
         }
     })
         .fail(function (data) {
-            $("#error").html(data);
-//            window.location.href = window.location.href;
+            console.log(JSON.parse(data));
+            return false;
         })
+
+    return false;
 }

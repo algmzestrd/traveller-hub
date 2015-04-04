@@ -23,15 +23,12 @@ $queryString = "INSERT INTO Recovery (User_ID, Code) VALUES(" . "'" . $to . "'" 
 
 $query = mysqli_query($connection, $queryString);
 
-
 $subject = 'Traveler Hub Password Reset Request';
 $message = 'Hello, You have requested a new password.';
 
-if(mail($to, $subject, "hello"))
-{
+if(mail($_POST['email'], $subject, $message)) {
     echo "success";
 }
-else
-{
+else {
     echo "failure";
 }

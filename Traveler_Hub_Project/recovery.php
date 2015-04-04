@@ -26,11 +26,8 @@ $query = mysqli_query($connection, $queryString);
 
 $subject = 'Traveler Hub Password Reset Request';
 $message = 'Hello, You have requested a new password.';
-$headers = 'From: thetravelerhubteam@gmail.com' . "\r\n" .
-    'Reply-To: thetravelerhubteam@gmail.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
 
-if(mail($to, $subject, $message, $headers))
+if(mail($to, $subject, "hello"))
 {
     echo "success";
 }

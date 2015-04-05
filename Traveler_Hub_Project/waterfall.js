@@ -4,8 +4,6 @@
 $(document).ready(function(){
 
     var jsonObj = "";
-    var currentUser = '<?php echo $_SESSION["user"]; ?>';
-    alert(currentUser);
 
 
 
@@ -54,18 +52,18 @@ $(document).ready(function(){
                 div.className = 'water';
                 div.innerHTML = string;
                 div.appendChild(btn);
-                if(currentUser == jsonObj[i][3])
-                {
                     var edit = document.createElement('button');
                     edit.className = 'Edit';
-                    edit.id = id;
-                    text = document.createTextNode("Edit Post!");
-                    edit.appendChild(text);
+                    edit.id = user+"edit";
+                var moreText = document.createTextNode("Edit Post!");
+                    edit.appendChild(moreText);
                     div.appendChild(edit);
-                }
+
+
                 div.id = id;
 
                 $("#warp").append(div);
+                $("#" +user+"edit").hide();
             }
         } else{
             alert("There was an error loading the page.");

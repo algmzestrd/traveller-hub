@@ -63,7 +63,10 @@ $(document).ready(function(){
                 div.id = id;
 
                 $("#warp").append(div);
+                if(true)
+                {
                 $("#" +user+"edit").hide();
+                }
             }
         } else{
             alert("There was an error loading the page.");

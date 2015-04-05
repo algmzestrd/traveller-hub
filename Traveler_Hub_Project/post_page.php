@@ -115,9 +115,5 @@
 
 		<!-- End waterfull here -->
     </body>
-<script>
-    var user = "<?php echo $_SESSION['user'] ?>";
-    user = user.split("@");
-    $("#" + user + "edit").show();
-</script>
+
 </html>

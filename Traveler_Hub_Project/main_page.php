@@ -111,7 +111,7 @@ a:hover {
     </a>
   </div>
   <div class="col-md-3">
-    <a href="post_page.html" class="thumbnail">
+    <a href="post_page.php" class="thumbnail">
       <h1 style = "text-align:center">What is happening?</h1>
       <img src="Materials/What-happen.png" alt="Cinque Terre" style="width:500px;height:100%">
     </a>

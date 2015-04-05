@@ -4,6 +4,8 @@
 $(document).ready(function(){
 
     var jsonObj = "";
+    var currentUser = '<?php echo $_SESSION["user"]; ?>';
+    alert(currentUser);
 
 
 
@@ -52,6 +54,15 @@ $(document).ready(function(){
                 div.className = 'water';
                 div.innerHTML = string;
                 div.appendChild(btn);
+                if(currentUser == jsonObj[i][3])
+                {
+                    var edit = document.createElement('button');
+                    edit.className = 'Edit';
+                    edit.id = id;
+                    text = document.createTextNode("Edit Post!");
+                    edit.appendChild(text);
+                    div.appendChild(edit);
+                }
                 div.id = id;
 
                 $("#warp").append(div);

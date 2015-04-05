@@ -85,9 +85,9 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script>
 
-            var user = "<?php echo $_SESSION['user']?>";
-            var firstLogin = "<?php echo $_SESSION['first']?>";
-            var name = "<?php echo $_SESSION['firstname']?>";
+            var user = "<?php echo $_SESSION['user'];?>";
+            var firstLogin = "<?php echo $_SESSION['first'];?>";
+            var name = "<?php echo $_SESSION['firstname'];?>";
             $("#account").html(user + "'s Account");
 
             if(firstLogin == 0)

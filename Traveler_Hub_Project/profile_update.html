@@ -83,6 +83,18 @@
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script>
+
+            var user = "<?php echo $_SESSION['user']?>";
+            var firstLogin = "<?php echo $_SESSION['first']?>";
+            var name = "<?php echo $_SESSION['firstname']?>";
+            $("#account").html(user + "'s Account");
+
+            if(firstLogin == 0)
+            {
+                $("#account").html(name + "'s Account");
+            }
+        </script>
     </body>
 
 </html>

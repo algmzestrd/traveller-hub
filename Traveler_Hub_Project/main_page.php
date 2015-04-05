@@ -15,8 +15,6 @@
     header("Location: loginPage.html");
 }
     header('Content-Type: text/html; charset=UTF-8');
-
-echo $_SESSION['first'];
 ?>
 <script>
 
@@ -160,6 +158,11 @@ slideit()
     </body>
     <script>
         var user = "<?php echo $_SESSION['user']?>";
+        var firstLogin = "<?php echo $_SESSION['first']?>";
         $("#account").html(user + "'s Account");
+        if(firstLogin == 1)
+        {
+            alert("Welcome to Traveler's Hub! Click on " + user + "'s Account to update your personal information. Let the team know if you have any questions!");
+        }
     </script>
 </html>

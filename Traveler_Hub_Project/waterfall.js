@@ -4,6 +4,13 @@
 $(document).ready(function(){
 
     var jsonObj = "";
+    var currentUser = "";
+
+    $.post("checkUser.php" ,{} , function(data)
+        {
+            currentUser = data;
+        }
+    );
 
 
 
@@ -19,9 +26,6 @@ $(document).ready(function(){
             var user;
             var date;
             var i;
-
-
-
 
             for(i = 0; i < numberOfPosts; i++)
             {
@@ -63,7 +67,7 @@ $(document).ready(function(){
                 div.id = id;
 
                 $("#warp").append(div);
-                if(true)
+                if(currentUser.split("@")[0] != user)
                 {
                 $("#" +user+"edit").hide();
                 }

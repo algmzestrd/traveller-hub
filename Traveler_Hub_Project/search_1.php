@@ -49,7 +49,7 @@ if(isset($_POST['typeahead'])){
     }
     }
     if($count == 0){
-        $output='No result find';
+        $output='No result found';
     }
     
 }

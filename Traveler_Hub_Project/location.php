@@ -132,7 +132,7 @@ header('Content-Type: text/html; charset=UTF-8');?>
         		</div>
       			<ul class="nav navbar-nav navbar-left">
       				<li><img alt="Brand" src="Materials/user.png" height="30" width="30" style = "margin-top: 12px"></li>
-      				<li><a href="#">My Account</a></li>
+      				<li><a href="#" id="account">My Account</a></li>
         			<li class="dropdown">
           				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More<span class="caret"></span></a>
           				<ul class="dropdown-menu" role="menu">
@@ -184,6 +184,21 @@ function showPosition(position) {
 </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script>
+            var user = "<?php echo $_SESSION['user']?>";
+            var firstLogin = "<?php echo $_SESSION['first']?>";
+            var name = "<?php echo $_SESSION['firstname']?>";
+            $("#account").html(user + "'s Account");
+
+            if(firstLogin == 1)
+            {
+                $("#account").html(user + "'s Account");
+            }
+            else
+            {
+                $("#account").html(name + "'s Account");
+            }
+        </script>
     </body>
     
     

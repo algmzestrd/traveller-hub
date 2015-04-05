@@ -56,9 +56,12 @@ $(document).ready(function(){
                 div.className = 'water';
                 div.innerHTML = string;
                 div.appendChild(btn);
-                    var edit = document.createElement('button');
+                    var edit = document.createElement('input');
                     edit.className = 'Edit';
+                edit.type = "submit";
+                edit.value = "Edit Post!";
                     edit.id = user+"edit";
+                    edit.action = "post_editing_page.html";
                 var moreText = document.createTextNode("Edit Post!");
                     edit.appendChild(moreText);
                     div.appendChild(edit);

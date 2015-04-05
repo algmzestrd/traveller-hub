@@ -33,14 +33,14 @@
             $queryString .= $email . "'";
             $query = mysqli_query($connection, $queryString);
             $result = $query->fetch_all(MYSQLI_NUM);
-            $_SESSION['firstname'] = $result[0][0];
-            $_SESSION['lastname'] = $result[0][1];
-            $_SESSION['age'] = $result[0][2];
-            $_SESSION['gender'] = $result[0][3];
-            $_SESSION['location'] = $result[0][4];
-            $_SESSION['hotel'] = $result[0][5];
-            $_SESSION['description'] = $result[0][6];
-            $_SESSION['interests'] = $result[0][7];
+            $_SESSION['firstname'] = $result[0][1];
+            $_SESSION['lastname'] = $result[0][2];
+            $_SESSION['age'] = $result[0][3];
+            $_SESSION['gender'] = $result[0][4];
+            $_SESSION['location'] = $result[0][5];
+            $_SESSION['hotel'] = $result[0][6];
+            $_SESSION['description'] = $result[0][7];
+            $_SESSION['interests'] = $result[0][8];
 
         }
         else {

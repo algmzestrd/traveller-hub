@@ -8,7 +8,8 @@
     </head>
 <?php
 
-    session_start();
+    include("checkFirstLogin.php");
+
 
     if(!isset($_SESSION['user'])) {
     header("Location: loginPage.html");
@@ -70,7 +71,7 @@ a:hover {
       			<ul class="nav navbar-nav navbar-left">
 
       				<li><img alt="Brand" src="Materials/user.png" height="30" width="30" style = "margin-top: 12px"></li>
-      				<li><a href="#">My Account</a></li>
+      				<li><a href="profile_update.html" id="account">My Account</a></li>
         			<li class="dropdown">
           				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More<span class="caret"></span></a>
           				<ul class="dropdown-menu" role="menu">
@@ -155,6 +156,13 @@ slideit()
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </body>
-    
-    
+    <script>
+        var user = "<?php echo $_SESSION['user']?>";
+        var firstLogin = "<?php echo $_SESSION['first']?>";
+        $("#account").html(user + "'s Account");
+        if(firstLogin == 1)
+        {
+            alert("Welcome to Traveler's Hub! Click on " + user + "'s Account to update your personal information. Let the team know if you have any questions!");
+        }
+    </script>
 </html>

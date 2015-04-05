@@ -117,16 +117,18 @@ header('Content-Type: text/html; charset=UTF-8');?>
     			</div>
 
         		<div class="col-sm-3 col-md-3 pull-right">
-        			<form class="navbar-form" role="search">
-        			<div class="input-group">
-
-
-            			<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-            			<div class="input-group-btn">
-                			<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            			</div>
-        			</div>
-        			</form>
+        			 <div class="bs-example">
+                                            <form action="search_1.php" method="post">
+                                                <div class="input-group">
+                                                    <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for Content ">
+                                                        <div class="input-group-btn">
+                                                            <button class="btn btn-default" type="submit">
+                                                                <i class="glyphicon glyphicon-search"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
         		</div>
       			<ul class="nav navbar-nav navbar-left">
       				<li><img alt="Brand" src="Materials/user.png" height="30" width="30" style = "margin-top: 12px"></li>

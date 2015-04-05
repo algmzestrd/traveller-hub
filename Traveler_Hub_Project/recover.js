@@ -28,7 +28,7 @@ function Mail() {
 
     $.post("recovery.php", {email:inputEmail, code:recoveryCode}, function (data) {
         if (data == 'success') {
-            alert("Thank you. If an account is associated with this email, you will receive instructions at that email shortly.");
+            alert("Thank you. If an account is associated with this email, you will receive a temporary password at that email shortly.");
             window.location.href = window.location.href;
             return false;
         } else if (data == 'failure') {

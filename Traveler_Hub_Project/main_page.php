@@ -98,25 +98,25 @@ a:hover {
   <div class="col-md-3">
     <a href="location.php" class="thumbnail">
       <h1 style = "text-align:center">Where to go?</h1>
-      <img src="Materials/login_pic3.jpg" alt="Pulpit Rock" style="width:100%;height:100%">
+      <img src="Materials/Where-to-go.png" alt="Pulpit Rock" style="width:100%;height:100%">
     </a>
   </div>
   <div class="col-md-3">
     <a href="ChatRoom/chat.html" class="thumbnail">
       <h1 style = "text-align:center">Who to chat?</h1>
-      <img src="Materials/login_pic3.jpg" alt="Moustiers Sainte Marie" style="width:100%;height:100%">
+      <img src="Materials/Who-to-chat.png" alt="Moustiers Sainte Marie" style="width:100%;height:100%">
     </a>
   </div>
   <div class="col-md-3">
     <a href="post_page.html" class="thumbnail">
       <h1 style = "text-align:center">What is happening?</h1>
-      <img src="Materials/login_pic3.jpg" alt="Cinque Terre" style="width:100%;height:100%">
+      <img src="Materials/What-happen.png" alt="Cinque Terre" style="width:100%;height:100%">
     </a>
   </div>
   <div class="col-md-3">
     <a href="InProgress.html" class="thumbnail">
       <h1 style = "text-align:center">How to ask for help?</h1>
-      <img src="Materials/login_pic3.jpg" alt="Cinque Terre" style="width:100%;height:100%">
+      <img src="Materials/Ask-for-help.png" alt="Cinque Terre" style="width:100%;height:100%">
     </a>
   </div>
 </div>

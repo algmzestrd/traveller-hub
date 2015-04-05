@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
 
+
+<!doctype html>
+<html>
+    <head>
+    <title>Profile Page</title>
+          <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+          <link rel = "stylesheet" href="stylepages/color.css">
+          <link rel = "stylesheet" href="stylepages/style.css">
+    </head>
+  
+    <body>
 		<nav class="navbar navbar-default">
   			<div class="container-fluid">
     			<div class="navbar-header">
@@ -51,14 +55,46 @@
 
 
 <form action="profile_update.php" method="post">
+    <br>
     First Name: <br>
     <input type="text" name="firstname">
     <br>
     Last Name: <br>
     <input type="text" name="lastname">
+    <br>
+    Gender: <br>
+    <input type="radio" name="sex" value="M">Male
+    <br><input type="radio" name="sex" value="F">Female
+    <br>
+    Age: <br>
+    <input type="text" name="age">
     <br><br>
     <input type="submit" value="Submit">
 </form>
 
-</body>
+       
+<nav class="navbar navbar-pills" style = "height: 0px">
+  <div class="container-fluid">
+	<h4 style = "color: #FFFFFF"> Copy rights: Travelers' Hub 2015 </h4>
+  </div><!-- /.container-fluid -->
+</nav>        
+        
+        
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script>
+
+            var user = "<?php echo $_SESSION['user'];?>";
+            var firstLogin = "<?php echo $_SESSION['first'];?>";
+            var name = "<?php echo $_SESSION['firstname'];?>";
+            $("#account").html(user + "'s Account");
+
+            if(firstLogin == 0)
+            {
+                $("#account").html(name + "'s Account");
+            }
+        </script>
+    </body>
+
 </html>

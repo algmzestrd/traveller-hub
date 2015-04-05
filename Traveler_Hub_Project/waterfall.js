@@ -4,6 +4,13 @@
 $(document).ready(function(){
 
     var jsonObj = "";
+    var currentUser = "";
+
+    $.post("checkUser.php" ,{} , function(data)
+        {
+            currentUser = data;
+        }
+    );
 
 
 
@@ -19,9 +26,6 @@ $(document).ready(function(){
             var user;
             var date;
             var i;
-
-
-
 
             for(i = 0; i < numberOfPosts; i++)
             {
@@ -49,6 +53,17 @@ $(document).ready(function(){
                 div.className = 'water';
                 div.innerHTML = string;
                 div.appendChild(btn);
+                    var edit = document.createElement('input');
+                    edit.className = 'Edit';
+                edit.type = "submit";
+                edit.value = "Edit Post!";
+                    edit.id = user+"edit";
+                    edit.action = "post_editing_page.html";
+                var moreText = document.createTextNode("Edit Post!");
+                    edit.appendChild(moreText);
+                    div.appendChild(edit);
+
+
                 div.id = id;
                 var j;
                 for( j = 0; j < numberOfParticipants; j++)
@@ -60,6 +75,10 @@ $(document).ready(function(){
                     div.appendChild(newImg);
                 }
                 $("#warp").append(div);
+                if(currentUser.split("@")[0] != user)
+                {
+                $("#" +user+"edit").hide();
+                }
             }
         } else{
             alert("There was an error loading the page.");

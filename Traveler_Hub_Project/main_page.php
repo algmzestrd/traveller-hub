@@ -19,11 +19,11 @@
 
 var slideimages = new Array() // create new array to preload images
 slideimages[0] = new Image() // create new instance of image object
-slideimages[0].src = "Materials/main-page-1.jpg" // set image src property to image path, preloading image in the process
+slideimages[0].src = "Materials/login_pic1.jpg" // set image src property to image path, preloading image in the process
 slideimages[1] = new Image()
-slideimages[1].src = "Materials/main-page-2.jpg"
+slideimages[1].src = "Materials/login_pic2.jpg"
 slideimages[2] = new Image()
-slideimages[2].src = "Materials/main-page-3.jpg"
+slideimages[2].src = "Materials/login_pic3.jpg"
 
 </script>
 
@@ -92,7 +92,7 @@ a:hover {
 
 
         				<div class="crop">
-    						<img src="Materials/main-page-1.jpg" alt="Login Image" id = "slide" />
+    						<img src="Materials/login_pic1.jpg" alt="Login Image" id = "slide" />
 						</div>
 <div class="row" style = "margin:40px">
   <div class="col-md-3">

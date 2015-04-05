@@ -26,4 +26,10 @@ $queryString = "UPDATE Profile SET First_Name=" . "'" . $firstName . "', Last_Na
 
 $query = mysqli_query($connection, $queryString);
 
+$queryString = "UPDATE User SET First_Login=";
+$queryString .= "'" . 0 . "' ";
+$queryString .= "WHERE User_ID=";
+$queryString .= "'" . $email . "'";
+$query = mysqli_query($connection, $queryString);
+
 header("Location: main_page.php");

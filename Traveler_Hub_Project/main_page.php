@@ -19,11 +19,11 @@
 
 var slideimages = new Array() // create new array to preload images
 slideimages[0] = new Image() // create new instance of image object
-slideimages[0].src = "Materials/login_pic1.jpg" // set image src property to image path, preloading image in the process
+slideimages[0].src = "Materials/main-page-1.jpg" // set image src property to image path, preloading image in the process
 slideimages[1] = new Image()
-slideimages[1].src = "Materials/login_pic2.jpg"
+slideimages[1].src = "Materials/main-page-2.jpg"
 slideimages[2] = new Image()
-slideimages[2].src = "Materials/login_pic3.jpg"
+slideimages[2].src = "Materials/main-page-3.jpg"
 
 </script>
 
@@ -92,31 +92,31 @@ a:hover {
 
 
         				<div class="crop">
-    						<img src="Materials/login_pic1.jpg" alt="Login Image" id = "slide" />
+    						<img src="Materials/main-page-1.jpg" alt="Login Image" id = "slide" />
 						</div>
 <div class="row" style = "margin:40px">
   <div class="col-md-3">
     <a href="location.php" class="thumbnail">
       <h1 style = "text-align:center">Where to go?</h1>
-      <img src="Materials/login_pic3.jpg" alt="Pulpit Rock" style="width:100%;height:100%">
+      <img src="Materials/Where-to-go.png" alt="Pulpit Rock" style="width:500px;height:100%">
     </a>
   </div>
   <div class="col-md-3">
     <a href="ChatRoom/chat.html" class="thumbnail">
       <h1 style = "text-align:center">Who to chat?</h1>
-      <img src="Materials/login_pic3.jpg" alt="Moustiers Sainte Marie" style="width:100%;height:100%">
+      <img src="Materials/Who-to-chat.png" alt="Moustiers Sainte Marie" style="width:500px;height:100%">
     </a>
   </div>
   <div class="col-md-3">
     <a href="post_page.html" class="thumbnail">
       <h1 style = "text-align:center">What is happening?</h1>
-      <img src="Materials/login_pic3.jpg" alt="Cinque Terre" style="width:100%;height:100%">
+      <img src="Materials/What-happen.png" alt="Cinque Terre" style="width:500px;height:100%">
     </a>
   </div>
   <div class="col-md-3">
     <a href="InProgress.html" class="thumbnail">
       <h1 style = "text-align:center">How to ask for help?</h1>
-      <img src="Materials/login_pic3.jpg" alt="Cinque Terre" style="width:100%;height:100%">
+      <img src="Materials/Ask-for-help.png" alt="Cinque Terre" style="width:500px;height:100%">
     </a>
   </div>
 </div>

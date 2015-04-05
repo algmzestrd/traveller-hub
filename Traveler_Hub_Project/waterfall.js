@@ -33,9 +33,6 @@ $(document).ready(function(){
                 user = user.split("@");
                 user = user[0];
                 date = jsonObj[i][4];
-
-
-
                 var string = "Title:" + " " + title + "\n";
                 string += "Description:" + " " + description + "\n";
                 string += "Posted By:" + " " + user + "\n";
@@ -53,7 +50,15 @@ $(document).ready(function(){
                 div.innerHTML = string;
                 div.appendChild(btn);
                 div.id = id;
-
+                var j;
+                for( j = 0; j < numberOfParticipants; j++)
+                {
+                    var newImg = document.createElement('img');
+                    newImg.setAttribute("src","Materials/user.png");
+                    newImg.setAttribute("height", "20");
+                    newImg.setAttribute("width","20");
+                    div.appendChild(newImg);
+                }
                 $("#warp").append(div);
             }
         } else{

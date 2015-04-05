@@ -25,9 +25,3 @@ $query = mysqli_query($connection, $queryString);
 $result = $query->fetch_all(MYSQLI_NUM);
 
 $_SESSION['first'] = $result[0][0];
-
-$queryString = "UPDATE User SET First_Login=";
-$queryString .= "'" . 0 . "' ";
-$queryString .= "WHERE User_ID=";
-$queryString .= "'" . $email . "'";
-$query = mysqli_query($connection, $queryString);

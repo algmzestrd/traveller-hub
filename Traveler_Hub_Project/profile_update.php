@@ -11,6 +11,9 @@ session_start();
 $firstName = $_POST['firstname'];
 $lastName = $_POST['lastname'];
 
+$_SESSION['firstname'] = $firstName;
+$_SESSION['lastname'] = $lastName;
+
 $server = "mysql.cs.iastate.edu:3306";
 $serverUser = "u30914";
 $serverPassword = "AfzMyGF4c7";

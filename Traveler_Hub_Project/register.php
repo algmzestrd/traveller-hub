@@ -26,15 +26,17 @@
 
     $query = mysqli_query($connection, $queryString);
 
+if(!$query) {
+    $response = "Email is already registered.";
+}
+else {
+    $response = "Registration successful!";
+
     $queryString = "INSERT INTO Profile (User_ID) VALUES(" . "'" . $email . "')";
 
     $query = mysqli_query($connection, $queryString);
 
-    if(!$query) {
-    $response = "Email is already registered.";
-}
-    else {
-    $response = "Registration successful!";
+
 }
     mysqli_close($connection);
 

@@ -29,6 +29,7 @@
         if(password_verify($password, $hash)) {
             $response = "success";
             $_SESSION['user'] = $email;
+            $_SESSION['firstname'] = "";
         }
         else {
             $response = "invalid";

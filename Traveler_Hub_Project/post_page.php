@@ -85,7 +85,7 @@ session_start();
                     }
                 }
                 var time = curr_hour + ":" + curr_min;
-                $.post("joining.php",{ id:activityID, time:time}, function(data) {
+                $.post("post_updating.php",{ id:activityID, time:time}, function(data) {
                     if(data =='done'){
                         location.reload();
                     }else{

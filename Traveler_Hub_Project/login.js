@@ -75,7 +75,7 @@ $(document).ready(function(){
                 } else if(data == 'Registration successful!'){
                     //     $("form")[0].reset();
                     alert(data);
-                    window.location.href = window.location.href;;
+                    window.location.href = window.location.href;
                     return false;
                 } else{
                     alert(data);

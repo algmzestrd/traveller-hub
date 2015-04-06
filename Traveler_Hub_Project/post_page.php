@@ -52,6 +52,50 @@ session_start();
                             alert("Could not communicate with server.");
                         })
             };
+
+            function Edit()
+            {
+                var activityID = this.id;
+                var date = new Date();
+                var curr_hour = date.getHours();
+                var curr_min = date.getMinutes();
+                if(curr_min < 10)
+                {
+                    curr_min = "0" + curr_min;
+                }
+                if(curr_hour > 12)
+                {
+                    curr_hour = curr_hour - 12;
+                    curr_min = curr_min + "PM";
+
+                }
+                else {
+                    if(curr_hour != 0 && curr_hour != 12)
+                    {
+                        curr_min = curr_min + "AM";
+                    }
+                    else if(curr_hour == 12)
+                    {
+                        curr_min = curr_min + "PM";
+                    }
+                    else
+                    {
+                        curr_hour = 12;
+                        curr_min = curr_min + "AM";
+                    }
+                }
+                var time = curr_hour + ":" + curr_min;
+                $.post("joining.php",{ id:activityID, time:time}, function(data) {
+                    if(data =='done'){
+                        location.reload();
+                    }else{
+                        alert(data);
+                    }
+                })
+                    .fail(function() {
+                        alert("Could not communicate with server.");
+                    })
+            };
         </script>
     <title>Travelers' Hub Posts List</title>
           <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">

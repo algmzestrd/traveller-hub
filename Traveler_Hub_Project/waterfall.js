@@ -62,6 +62,7 @@ $(document).ready(function(){
                 var moreText = document.createTextNode("Edit Post!");
                     edit.appendChild(moreText);
                     div.appendChild(edit);
+                edit.onclick = Edit;
 
 
                 div.id = id;

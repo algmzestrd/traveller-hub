@@ -69,7 +69,7 @@ $(document).ready(function(){
             return false;
         }else {
             $.post("register.php",{ inputEmail:email, inputPassword:password}, function(data) {
-                if(data =='Email or password is already taken.'){
+                if(data =='Email is already registered.'){
                     $("#error").text(data);
                     return false;
                 } else if(data == 'Registration successful!'){

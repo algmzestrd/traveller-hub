@@ -58,5 +58,3 @@ if(isset($_POST['typeahead'])){
 
 print("$output");
 
-?>
-

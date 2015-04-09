@@ -3,8 +3,42 @@
     <head>
     <title>Local Information</title>
           <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
           <link rel = "stylesheet" href="stylepages/color.css">
           <link rel = "stylesheet" href="stylepages/style.css">
+    <style type="text/css">
+    div.container {
+        margin: 15px;   
+    }
+    div.left, div.right {
+        float: left;
+        padding: 10px;    
+    }
+    div.left {
+        background-color:orange;    
+    }
+    div.right {
+        background-color: yellow;    
+    }
+    #panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+    }
+
+    #panel {
+    padding: 50px;
+    display: none;
+    }
+    </style>
+    <script> 
+    $(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle();
+    });
+    });
+    </script>
           
 <script
 src="http://maps.googleapis.com/maps/api/js">
@@ -151,9 +185,18 @@ header('Content-Type: text/html; charset=UTF-8');?>
   			</div>
 		</nav>
 
-<div id="googleMap" style="width:100%;height:450px;"></div>
+<div id="googleMap" style="width:100%;height:200px;"></div>
 
 <button class = "btn btn-primary" style = "width:100%" onclick="currentLoc()">My Location</button>
+
+<div id="flip">Click to see restaurant around</div>
+<div id="panel">
+  <ul>
+      <li>Chinese</li>
+      <li>France</li>
+      <li>Italian</li>
+  </ul>
+</div>  
 
 <p id="demo"></p>
 

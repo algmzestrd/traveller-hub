@@ -99,7 +99,7 @@ a:hover {
 						</div>
 <div class="row" style = "margin:40px">
   <div class="col-md-3">
-    <a href="location.php" class="thumbnail">
+    <a href="location.html" class="thumbnail">
       <h1 style = "text-align:center">Where to go?</h1>
       <img src="Materials/Where-to-go.png" alt="Pulpit Rock" style="width:500px;height:100%">
     </a>

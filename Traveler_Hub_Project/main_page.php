@@ -86,9 +86,11 @@ a:hover {
         			</li>
 
         			<li role = "presentation" class = "active"><iframe src="http://free.timeanddate.com/clock/i4k62t3m/n76/fcfff/tct/pct/pa9/tt0/tm1/ta1/tb4" frameborder="0" width="184" height="50" allowTransparency="true"></iframe></li>
-                    <form action="logout.php">
-                        <input type="submit" value="Logout">
-                    </form>
+                    <li>
+					<form role="form" action="logout.php" style = "padding-top:12px">
+					<button type="submit" class="btn btn-primary">Logout</button>
+					</form>					
+					</li>
       			</ul>
   			</div>
 		</nav>

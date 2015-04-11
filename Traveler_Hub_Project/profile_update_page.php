@@ -54,25 +54,22 @@
   			</div>
 		</nav>
 
-
-<form action="profile_update.php" method="post">
-    <br>
-    First Name: <br>
-    <input type="text" name="firstname">
-    <br>
-    Last Name: <br>
-    <input type="text" name="lastname">
-    <br>
-    Gender: <br>
-    <input type="radio" name="sex" value="M">Male
-    <br><input type="radio" name="sex" value="F">Female
-    <br>
-    Age: <br>
-    <input type="text" name="age">
-    <br><br>
-    <input type="submit" value="Submit">
+<form action="profile_update.php" method="post" style = "margin-left:auto; margin-right:auto;width:500px; padding:20px">
+    <label for = "name">First Name:</label>
+    <input type="text" class = "form-control" name="firstname">
+    <label for = "last">Last Name:</label>
+    <input type="text" class = "form-control" name="lastname">
+    <label for = "gender">Gender:</label>
+    <div class = "radio">
+    <label><input type="radio" name="sex" value="M">Male</label><br>
+    <label><input type="radio" name="sex" value="F">Female</label>
+    </div>
+    <label for = "age">Age:</label>
+    <input type="text" class = "form-control" name="age">
+    <div style = "padding-left:150px; padding-top:20px">
+    <button type="submit" class="btn btn-default">Submit</button>
+    </div>
 </form>
-
        
 <nav class="navbar navbar-pills" style = "height: 0px">
   <div class="container-fluid">

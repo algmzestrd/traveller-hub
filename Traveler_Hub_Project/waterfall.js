@@ -53,19 +53,20 @@ $(document).ready(function(){
                 div.className = 'water';
                 div.innerHTML = string;
                 div.appendChild(btn);
-                    var edit = document.createElement('input');
-                    edit.className = 'Edit';
+              
+                var edit = document.createElement('input');
+                edit.className = 'Edit';
                 edit.type = "submit";
                 edit.value = "Edit Post!";
-                    edit.id = user+"edit";
-                    edit.action = "post_editing_page.html";
+                edit.id = user+"edit";
+                edit.action = "post_editing_page.html";
                 var moreText = document.createTextNode("Edit Post!");
-                    edit.appendChild(moreText);
-                    div.appendChild(edit);
+                edit.appendChild(moreText);
+                div.appendChild(edit);
                 edit.onclick = Edit;
-
-
                 div.id = id;
+                div.style.border = '2px solid red';
+                div.style.backgroundColor = 'rgb(255, 255, 255)';
                 var j;
                 for( j = 0; j < numberOfParticipants; j++)
                 {

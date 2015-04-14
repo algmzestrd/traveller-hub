@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     var jsonObj = "";
     var currentUser = "";
+    
 
     $.post("checkUser.php" ,{} , function(data)
         {
@@ -14,11 +15,12 @@ $(document).ready(function(){
 
 
 
-    $.post("getActivities.php",{}, function(data) {
+    $.post("getActivities.php",{}, function(data) 
+    {
+
         if(data != "")
         {
             jsonObj = $.parseJSON(data);
-
             var numberOfPosts = jsonObj.length;
             var title;
             var description;
@@ -27,6 +29,7 @@ $(document).ready(function(){
             var user;
             var date;
             var i;
+            var count = 1;
             for(i = 0; i < numberOfPosts; i++)
             {
                 title = jsonObj[i][1];
@@ -37,8 +40,10 @@ $(document).ready(function(){
                 user = user.split("@");
                 user = user[0];
                 date = jsonObj[i][4];
+                
                 function createChild()
                 {
+                    alert("Here " + i + " " + count + " " + numberOfPosts);
                     var string = "Title:" + " " + title + "\n";
                     string += "Description:" + " " + description + "\n";
                     string += "Posted By:" + " " + user + "\n";
@@ -47,6 +52,8 @@ $(document).ready(function(){
                     string += "\n";
                     var div = document.createElement('div');
                     var btn = document.createElement('button');
+                    div.className = 'water';
+                    div.innerHTML = string;
                     btn.id = id;
                     btn.className = 'Join';
                     btn.onclick = Join;
@@ -54,8 +61,6 @@ $(document).ready(function(){
                     btn.appendChild(text);
                     btn.style.width = '70px';
                     btn.style.height = '10px';
-                    div.className = 'water';
-                    div.innerHTML = string;
                     div.appendChild(btn);
                     var edit = document.createElement('input');
                     edit.className = 'Edit';
@@ -71,7 +76,6 @@ $(document).ready(function(){
                     edit.onclick = Edit;
                     div.id = id;
                     div.style.boxShadow = '10px 10px 5px #888888';
-                    div.style.borderRadius = '25px';
                     div.style.background=  '#00FF99';
                     div.style.padding = '20px';
                     div.style.height =  '100%';
@@ -89,16 +93,20 @@ $(document).ready(function(){
                     }
                     return div;
                 }
+                
+                
                 function on(element, type, func) 
                 {
                     if (element.addEventListener) {
-                    element.addEventListener(type, func, false); //false 表示冒泡
+                    element.addEventListener(type, func, false);
                     } else if (element.attachEvent) {
                         element.attachEvent('on' + type, func);
                     } else {
                         element['on' + type] = func;
                     }
                 }
+                
+                
                 function getRowByHeight()
                 {
                     var row = [this.$('row1'),this.$('row2'),this.$('row3'),this.$('row4')];
@@ -107,21 +115,27 @@ $(document).ready(function(){
                         row[i].height = row[i].offsetHeight;
                         height.push(row[i]);
                     }
-                  
                     height.sort(function(a,b){
                     return a.height - b.height;
                     })
                     return height;
                 }
-                function getPageHeight(){
+                
+                
+                function getPageHeight()
+                {
                     return document.documentElement.scrollHeight || document.body.scrollHeight ;
                 }
-                function getScrollTop(){
+                function getScrollTop()
+                {
                    return document.documentElement.scrollTop || document.body.scrollTop;
                 }
-                function getClientHeigth(){
+                function getClientHeigth()
+                {
                     return document.documentElement.clientHeight || document.body.clientHeight;
                 }
+                
+                
                 function append()
                 {
                     var i = 0,rows = this.getRowByHeight(),div,k;
@@ -134,7 +148,13 @@ $(document).ready(function(){
                         rows[k].appendChild(div);
                     }
                 }
-                $("#warp").append(createChild());
+                
+                if(count <= numberOfPosts)
+{
+                $('#col' + count).append(createChild());
+                count++;
+                
+}
                 if(currentUser.split("@")[0] != user)
                 {
                 $("#" +user+"edit").hide();

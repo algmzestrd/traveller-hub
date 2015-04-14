@@ -153,11 +153,63 @@ session_start();
 		
 		<div style = "text-align:center; padding-top: 30px">
 		<a href="post_editing_page.html" rel="ajaxpanel"><button type="button" class="btn btn-primary">Post</button></a>
-		</div>
-		
-		<!-- Start waterfall here -->
-
-		<div id="warp" class="warp">
+<div id="warp" class="warp">
+    <div class="full" id="row1">
+        <div class="water">
+        </div>
+        <div class="water">
+           
+        </div>
+        <div class="water">
+          
+        </div>
+        <div class="water">
+           
+        </div>
+    </div>
+    <div class="full" id="row2">
+        <div class="water">
+            
+        </div>
+        <div class="water">
+           
+        </div>
+        <div class="water">
+            
+        </div>
+        <div class="water">
+            
+        </div>
+    </div>
+    <div class="full" id="row3">
+        <div class="water">
+           
+        </div>
+        <div class="water">
+            
+        </div>
+        <div class="water">
+           
+        </div>
+        <div class="water">
+            
+        </div>
+    </div>
+    <div class="full last" id="row4">
+        <div class="water">
+            
+        </div>
+        <div class="water">
+           
+        </div>
+        <div class="water">
+            
+        </div>
+        <div class="water">
+            
+        </div>
+    </div>
+</div>
         </div>
         <script>
             var user = "<?php echo $_SESSION['user']?>";

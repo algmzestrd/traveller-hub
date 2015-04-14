@@ -4,11 +4,69 @@
     <html>
         <head>
             <title>Travelers' Hub Login</title>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+            <script src="typeahead.min.js"></script>
             <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
                 <link rel = "stylesheet" href="stylepages/color.css">
                     <link rel = "stylesheet" href="stylepages/style.css">
+                        <script>
+    $(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'typeahead',
+        remote:'search.php?key=%QUERY',
+        limit : 10
+    });
+});
+    </script>
+                        <style type="text/css">
+                
+
+.typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 24px;
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	padding: 8px 12px;
+	width: 300px;
+}
+.typeahead {
+	background-color: #FFFFFF;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-dropdown-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 422px;
+}
+.tt-suggestion {
+	font-size: 24px;
+	line-height: 24px;
+	padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+</style>
                     </head>
-                    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                     <script>
 
     var slideimages = []; // create new array to preload images
@@ -52,6 +110,8 @@
                                             </li>
                                             <li class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown 
+                                                    
+                                                    
                                                     
                                                     <span class="caret"></span>
                                                 </a>
@@ -97,26 +157,29 @@
                                                                     <button form="loginForm" name="register" id="registerButton" type="submit"  class="btn btn-primary custom">
                                                                         <b style = "color: #FFFFFF">Register</b>
                                                                     </button>
-
-                                                            <br><br><a href="javascript:void(0)" onclick="Recover()" id="recover">Forgot Password</a><br><br><span id="error"></span>
-
-                                                                        </form>
+                                                                    <br>
+                                                                        <br>
+                                                                            <a href="javascript:void(0)" onclick="Recover()" id="recover">Forgot Password</a>
+                                                                            <br>
+                                                                                <br>
+                                                                                    <span id="error"></span>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
+                                                                </div>
+                                                                <div class="crop">
+                                                                    <img src="Materials/login_pic1.jpg" alt="Login Image" id = "slide" />
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="crop">
-                                                            <img src="Materials/login_pic1.jpg" alt="Login Image" id = "slide" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <nav class="navbar navbar-pills" style = "height: 0">
-                                                    <div class="container-fluid">
-                                                        <h4 style = "color: #FFFFFF"> Copyright: Travelers' Hub 2015 </h4>
-                                                    </div>
-                                                    <!-- /.container-fluid -->
-                                                </nav>
-                                                <script type="text/javascript">
+                                                        <nav class="navbar navbar-pills" style = "height: 0">
+                                                            <div class="container-fluid">
+                                                                <h4 style = "color: #FFFFFF"> Copyright: Travelers' Hub 2015 </h4>
+                                                            </div>
+                                                            <!-- /.container-fluid -->
+                                                        </nav>
+                                                        <script type="text/javascript">
 
     //variable that will increment through the images
     var step = 0;
@@ -138,6 +201,8 @@
 
 
                                                 
-                                                </script>
-                                            </body>
-                                        </html>
+                                                
+                                                        
+                                                        </script>
+                                                    </body>
+                                                </html>

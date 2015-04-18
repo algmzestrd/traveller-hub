@@ -1,0 +1,26 @@
+profile page
+logo link
+search bar UI
+front desk
+Hotel History
+Hotel News
+Post UI
+About Us
+
+
+
+-------
+
+Tab Section:
+http://www.dynamicdrive.com/dynamicindex17/ajaxtabscontent/index.htm
+
+Tab Section 2:
+http://www.dynamicdrive.com/dynamicindex17/ajaxcontent.htm
+
+
+
+
+---------------
+Travel API
+
+http://www.washington.edu/students/reg/immunization.html

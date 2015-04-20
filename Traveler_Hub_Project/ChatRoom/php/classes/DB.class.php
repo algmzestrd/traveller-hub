@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * Created by Feng Guo
+ */
+
 class DB {
 	private static $instance;
 	private $MySQLi;

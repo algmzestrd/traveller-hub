@@ -1,6 +1,6 @@
 <?php
 
-/* Database Configuration. Add your details below */
+/* Database Configuration. Created by: Feng Guo */
 
 $dbOptions = array(
 	'db_host' => 'localhost',
@@ -25,7 +25,6 @@ session_start();
 
 if(get_magic_quotes_gpc()){
 	
-	// If magic quotes is enabled, strip the extra slashes
 	array_walk_recursive($_GET,create_function('&$v,$k','$v = stripslashes($v);'));
 	array_walk_recursive($_POST,create_function('&$v,$k','$v = stripslashes($v);'));
 }

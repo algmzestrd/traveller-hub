@@ -2,7 +2,6 @@ profile page
 logo link
 search bar UI
 front desk
-Hotel History
 Hotel News
 Post UI
 About Us

@@ -201,9 +201,6 @@ var chat = {
 		var d = new Date();
 		if(params.time) {
 			
-			// PHP returns the time in UTC (GMT). We use it to feed the date
-			// object and later output it in the user's timezone. JavaScript
-			// internally converts it for us.
 			
 			d.setUTCHours(params.time.hours,params.time.minutes);
 		}

@@ -31,7 +31,7 @@ if(isset($_POST['typeahead'])){
   echo "<td>" . $row['Activity_ID'] . "</td>";
   echo "<td>" . $row['Content'] . "</td>";
   echo "<td>" . $row['Title'] . "</td>";
-echo '<td><input type="submit" name="deleteItem" value="'.$row['Content'].'" /></td>"';
+echo '<td><button type="submit" name="deleteItem" value="'.$row['Content'].'" > Delete </button> </td>"';
   echo "</tr>";
   }
 echo "</table>";
@@ -91,12 +91,12 @@ echo "</table>";
  
  if(isset($_POST['deleteItem']))
 {
-     print("in");
+     
      $del=$_POST['deleteItem'];
   $query=mysql_query(" 
    DELETE FROM Activity
 WHERE Content like '%$del%'") or die("could not find in Activity");
-     print("out");
+     print("YOU HAVE DELETE SUCCESSFULLY")
      
 }
 

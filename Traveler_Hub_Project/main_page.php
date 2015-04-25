@@ -5,8 +5,10 @@
           <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
           <link rel = "stylesheet" href="stylepages/color.css">
           <link rel = "stylesheet" href="stylepages/style.css">
+          <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" media="all" rel="stylesheet">
          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
             <script src="typeahead.min.js"></script>
     </head>
 <?php
@@ -194,19 +196,19 @@ a:hover {
     <li>
       <a class="isu-Icon--facebook" href="http://www.facebook.com/IowaStateU" title="Facebook">
         <i class="fa fa-facebook-square"></i>
-        <span class="wd-u-HiddenVisually">Facebook</span>
+        <span class="wd-u-HiddenVisually"></span>
       </a>
     </li>
     <li>
       <a class="isu-Icon--twitter" href="http://twitter.com/IowaStateU" title="Twitter">
         <i class="fa fa-twitter-square"></i>
-        <span class="wd-u-HiddenVisually">Twitter</span>
+        <span class="wd-u-HiddenVisually"></span>
       </a>
     </li>
     <li>
       <a class="isu-Icon--youtube" href="http://www.youtube.com/user/iowastateu" title="YouTube">
         <i class="fa fa-youtube-square"></i>
-        <span class="wd-u-HiddenVisually">YouTube</span>
+        <span class="wd-u-HiddenVisually"></span>
       </a>
     </li>
   </ul>

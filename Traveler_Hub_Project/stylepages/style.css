@@ -153,3 +153,20 @@ input.form-control {
     height: 100%;
     margin: -300px -300px 0px 0px;
 }
+.isu-Icon--facebook{
+    color: #3b579d;
+}
+
+.isu-Icon--twitter{
+    color: #00b0ed;
+}
+
+.isu-Icon--youtube{
+    color: #cd201f;
+}
+
+.isu-Icon--facebook:hover,
+.isu-Icon--twitter:hover,
+.isu-Icon--youtube:hover{
+    color: #333;
+}

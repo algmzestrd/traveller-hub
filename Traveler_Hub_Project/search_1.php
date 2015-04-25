@@ -14,19 +14,31 @@ if(isset($_POST['typeahead'])){
     
     $count=mysql_num_rows($query);
     if($count > 0){
-         while($row=mysql_fetch_array($query)){
-           // $activityID=$row['Activity_ID'];
-            $content=$row['Content'];
-            $activityID=$row['Activity_ID'];
-            $post_time=$row['Post_Time'];
-            $participants=$row['Participants'];
-            $title=$row['Title'];
-            $user=$row['User_ID'];
-            $output .='<div>'.$activityID. ' '.$user. ' '.$title. ' '.$content. ' ' .$post_time.' '.$participants. '</div>';
-    }
         
+    
+        
+                echo "<form action='search_1.php' method='POST'>
+                <table border='1'>
+<tr>
+<th>Activity_ID</th>
+<th>Content</th>
+<th>Title</th>
+<th>delete</th>
+</tr>";
+           while($row = mysql_fetch_array($query)){
+              
+            echo "<tr>";
+  echo "<td>" . $row['Activity_ID'] . "</td>";
+  echo "<td>" . $row['Content'] . "</td>";
+  echo "<td>" . $row['Title'] . "</td>";
+echo '<td><input type="submit" name="deleteItem" value="'.$row['Content'].'" /></td>"';
+  echo "</tr>";
+  }
+echo "</table>";
+    echo"</form>";
     }
-    else if($count == 0){
+
+    if($count == 0){
          $query=mysql_query("SELECT * 
     FROM Post
     WHERE Content like '%$searchq%' 
@@ -36,6 +48,27 @@ if(isset($_POST['typeahead'])){
         $count=mysql_num_rows($query);
         
          if($count > 0){
+             
+            echo "<table border='1'>
+<tr>
+<th>Activity_ID</th>
+<th>Content</th>
+<th>Title</th>
+<th>delete</th>
+</tr>";
+           while($row = mysql_fetch_array($query)){
+               
+              echo "<tr>";
+  echo "<td>" . $row['Activity_ID'] . "</td>";
+  echo "<td>" . $row['Content'] . "</td>";
+  echo "<td>" . $row['Title'] . "</td>";
+//echo "<td>"<!-- how could I add a button here? -->"</td>";
+  echo "</tr>";
+  }
+echo "</table>";
+           
+
+        /*  
          while($row=mysql_fetch_array($query)){
            // $activityID=$row['Activity_ID'];
             $content=$row['Content'];
@@ -44,7 +77,9 @@ if(isset($_POST['typeahead'])){
             $title=$row['Title'];
             $user=$row['User_ID'];
             $output .='<div>'.$QuestionID. ' '.$user. ' '.$title. ' '.$content. ' ' .$post_time. '</div>';
+            
     }
+    */
         
     }
     }
@@ -54,7 +89,18 @@ if(isset($_POST['typeahead'])){
     
 }
  
+ if(isset($_POST['deleteItem']))
+{
+     print("in");
+     $del=$_POST['deleteItem'];
+  $query=mysql_query(" 
+   DELETE FROM Activity
+WHERE Content like '%$del%'") or die("could not find in Activity");
+     print("out");
+     
+}
+
+ mysql_close();
 
 
-print("$output");
 

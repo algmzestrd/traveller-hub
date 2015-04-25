@@ -142,11 +142,13 @@ input.form-control {
 	margin-right: auto;
 }
 
+
 .crop {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
+
 
 .crop img {
     width: 100%;
@@ -170,3 +172,73 @@ input.form-control {
 .isu-Icon--youtube:hover{
     color: #333;
 }
+.isu-QuickLinks{
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 719px) {
+    .isu-QuickLinks{
+        margin: 0 10px 0;
+        padding-bottom: 10px;
+    }
+}
+
+.isu-QuickLinks ul{
+    letter-spacing: -0.31em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.isu-QuickLinks li{
+    display: inline-block;
+    letter-spacing: normal;
+    vertical-align: top;
+}
+
+.isu-QuickLinks a{
+    border-left: 1px solid #ce2028;
+    display: block;
+    font-size: 1.6em;
+    font-weight: bold;
+    line-height: 14px;
+    padding: 0 4px;
+    text-decoration: none;
+}
+
+.isu-QuickLinks a:hover{
+    text-decoration: underline;
+}
+
+.isu-QuickLinks-left{
+    float: left;
+    width: 50%;
+}
+
+.isu-QuickLinks-right{
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+
+.isu-QuickLinks-left > li:first-child > a{
+    border-left: 0;
+    padding-left: 0;
+}
+
+.isu-QuickLinks-right a{
+    border-left: 0;
+}
+
+@media screen and (max-width: 980px) {
+  .wd-u-VisibleDesktop, .visible-desktop,
+  facebook-squaretable.wd-u-VisibleDesktop,
+  table.visible-desktop,
+  tr.wd-u-VisibleDesktop,
+  tr.visible-desktop,
+  th.wd-u-VisibleDesktop,
+  th.visible-desktop,
+  td.wd-u-VisibleDesktop,
+  td.visible-desktop {
+    display: none !important; } }

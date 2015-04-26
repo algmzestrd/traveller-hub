@@ -171,7 +171,7 @@ session_start();
 		<nav class="navbar navbar-default">
   			<div class="container-fluid">
     			<div class="navbar-header">
-      				<a class="navbar-brand" href="#">
+      				<a class="navbar-brand" href="main_page.php">
       				<img alt="Brand" src="Materials/login_picture.gif" height="45" width="60">
       				</a>
     			</div>

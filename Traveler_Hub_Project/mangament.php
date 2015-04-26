@@ -201,9 +201,16 @@ else if(isset($_POST['deleteItem']))
 {
      
      $del=$_POST['deleteItem'];
-  $query=mysql_query(" 
+    
+    $Dquery=mysql_query(" 
    DELETE FROM Activity
 WHERE Activity_ID like '%$del%'") or die("could not find in Activity");
+    
+     $query=mysql_query("SELECT * 
+    FROM Activity") 
+    or die("could not find in Activity");
+    
+
    
     echo"
 <!DOCTYPE html>

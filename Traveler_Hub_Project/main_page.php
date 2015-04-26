@@ -173,7 +173,7 @@ a:hover {
     </a>
   </div>
   <div class="col-md-3">
-    <a href="ChatRoom/chat.html" class="thumbnail">
+    <a href="ChatRoom/chat.html" target="_blank" class="thumbnail">
       <h1 style = "text-align:center">Who to chat?</h1>
       <img src="Materials/Who-to-chat.png" alt="Moustiers Sainte Marie" style="width:500px;height:100%">
     </a>
@@ -185,7 +185,7 @@ a:hover {
     </a>
   </div>
   <div class="col-md-3">
-    <a href="InProgress.html" class="thumbnail">
+    <a href="ChatRoom/chat.html" target="_blank" class="thumbnail">
       <h1 style = "text-align:center">How to ask for help?</h1>
       <img src="Materials/Ask-for-help.png" alt="Cinque Terre" style="width:500px;height:100%">
     </a>

@@ -102,5 +102,5 @@ WHERE Content like '%$del%'") or die("could not find in Activity");
 
  mysql_close();
 
-
+?>
 

@@ -8,6 +8,7 @@ session_start();
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="waterfall.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" media="all" rel="stylesheet">
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
             <script src="typeahead.min.js"></script>
         
@@ -273,6 +274,7 @@ session_start();
     </div>
 </div>
         </div>
+
         <script>
             var user = "<?php echo $_SESSION['user']?>";
             var firstLogin = "<?php echo $_SESSION['first']?>";
@@ -291,6 +293,29 @@ session_start();
 
 
 		<!-- End waterfull here -->
+        <div class="isu-QuickLinks">
+
+  <ul class="isu-QuickLinks-right">
+    <li>
+      <a class="isu-Icon--facebook" href="http://www.facebook.com/IowaStateU" title="Facebook">
+        <i class="fa fa-facebook-square"></i>
+        <span class="wd-u-HiddenVisually"></span>
+      </a>
+    </li>
+    <li>
+      <a class="isu-Icon--twitter" href="http://twitter.com/IowaStateU" title="Twitter">
+        <i class="fa fa-twitter-square"></i>
+        <span class="wd-u-HiddenVisually"></span>
+      </a>
+    </li>
+    <li>
+      <a class="isu-Icon--youtube" href="http://www.youtube.com/user/iowastateu" title="YouTube">
+        <i class="fa fa-youtube-square"></i>
+        <span class="wd-u-HiddenVisually"></span>
+      </a>
+    </li>
+  </ul>
+</div>
     </body>
 
 </html>

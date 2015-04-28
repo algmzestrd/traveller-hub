@@ -119,7 +119,7 @@ header('Content-Type: text/html; charset=UTF-8');
         </a>
     </div>
     <div class="col-md-3">
-        <a href="InProgress.html" class="thumbnail">
+        <a href="ChatRoom/chat.html" class="thumbnail">
             <h1 style = "text-align:center">How to ask for help?</h1>
             <img src="Materials/Ask-for-help.png" alt="Cinque Terre" style="width:500px;height:100%">
         </a>

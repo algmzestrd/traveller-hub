@@ -5,7 +5,7 @@ session_start();
     header("Location: loginPage.html");
 }
 
-if($_SESSION)
+
 mysql_connect("mysql.cs.iastate.edu","u30914","AfzMyGF4c7") or die("could not connect");
 mysql_select_db("db30914") or die("could not connect db");
 $output="";
@@ -38,7 +38,7 @@ if(isset($_POST['typeahead'])){
   echo "<td>" . $row['Activity_ID'] . "</td>";
   echo "<td>" . $row['Content'] . "</td>";
   echo "<td>" . $row['Title'] . "</td>";
-echo '<td><button type="submit" name="deleteItem" value="'.$row['Content'].'" > Delete </button> </td>"';
+echo '<td><button type="submit" name="join" value="'.$row['Activity_ID'].'" >Join </button> </td>"';
   echo "</tr>";
   }
 echo "</table>";

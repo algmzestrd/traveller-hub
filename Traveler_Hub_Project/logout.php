@@ -6,11 +6,11 @@
  * Time: 8:38 PM
  */
 
-    session_start();
+session_start();
 
-    if(!isset($_SESSION['user'])) {
-    header("Location: loginPage.html");
+if(!isset($_SESSION['user'])) {
+    header("Location: index.html");
 }
 
-    session_destroy(); // Destroying All Sessions
-    header("Location: loginPage.html"); // Redirecting To Home Page
+session_destroy(); // Destroying All Sessions
+header("Location: index.html"); // Redirecting To Home Page

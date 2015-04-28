@@ -1,33 +1,32 @@
 <?php
 
-    session_start();
+session_start();
 
-    if(!isset($_SESSION['user'])) {
-    header("Location: loginPage.html");
+if(!isset($_SESSION['user'])) {
+    header("Location: index.html");
 }
 
-    $server = "mysql.cs.iastate.edu:3306";
-    $serverUser = "u30914";
-    $serverPassword = "AfzMyGF4c7";
-    $serverDatabase = "db30914";
+$server = "10.25.71.66";
+$serverUser = "u30914";
+$serverPassword = "AfzMyGF4c7";
+$serverDatabase = "db30914";
+$connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase, 3306);
 
-    $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
+$user = $_SESSION['user'];
 
-    $user = $_SESSION['user'];
+$id = $_POST['id'];
+$time = $_POST['time'];
 
-    $id = $_POST['id'];
-    $time = $_POST['time'];
+$object = new DateTime("now");
+$date = $object->format("m-d-Y");
 
-    $object = new DateTime("now");
-    $date = $object->format("m-d-Y");
+$queryString = "INSERT INTO Participate (Activity_ID, User_ID, Join_Time, Join_Date) VALUES (";
+$queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" . ", " . "'" . $time . "'";
+$queryString .= ", " . "'" . $date . "')";
 
-    $queryString = "INSERT INTO Participate (Activity_ID, User_ID, Join_Time, Join_Date) VALUES (";
-    $queryString .= "'" . $id . "'" . ", " . "'" . $user . "'" . ", " . "'" . $time . "'";
-    $queryString .= ", " . "'" . $date . "')";
+$query = mysqli_query($connection, $queryString);
 
-    $query = mysqli_query($connection, $queryString);
-
-    if(mysqli_error($connection) == "") {
+if(mysqli_error($connection) == "") {
 
     $queryString = "SELECT Participants FROM Activity WHERE Activity_ID=";
     $queryString .= "'" . $id . "'";
@@ -46,5 +45,5 @@
     $query = mysqli_query($connection, $queryString);
 }
 
-    echo "done";
+echo "done";
 

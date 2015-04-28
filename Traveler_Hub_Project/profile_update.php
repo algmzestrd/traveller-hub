@@ -20,14 +20,13 @@ $_SESSION['lastname'] = $lastName;
 $_SESSION['age'] = $age;
 $_SESSION['gender'] = $sex;
 
-$server = "mysql.cs.iastate.edu:3306";
+$server = "10.25.71.66";
 $serverUser = "u30914";
 $serverPassword = "AfzMyGF4c7";
 $serverDatabase = "db30914";
+$connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase, 3306);
 
 $email = $_SESSION['user'];
-
-$connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
 $email = mysqli_real_escape_string($connection, $email);
 
@@ -42,3 +41,4 @@ $queryString .= "'" . $email . "'";
 $query = mysqli_query($connection, $queryString);
 
 header("Location: main_page.php");
+

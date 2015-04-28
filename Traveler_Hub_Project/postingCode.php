@@ -1,35 +1,35 @@
 <?php
 
-    session_start();
+session_start();
 
-    if(!isset($_SESSION['user'])) {
-    header("Location: loginPage.html");
+if(!isset($_SESSION['user'])) {
+    header("Location: index.html");
 }
 
-    $server = "mysql.cs.iastate.edu:3306";
-    $serverUser = "u30914";
-    $serverPassword = "AfzMyGF4c7";
-    $serverDatabase = "db30914";
+$server = "10.25.71.66";
+$serverUser = "u30914";
+$serverPassword = "AfzMyGF4c7";
+$serverDatabase = "db30914";
+$connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase, 3306);
 
-    $response = '';
+$response = '';
 
-    $user = $_SESSION['user'];
+$user = $_SESSION['user'];
 
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-    $location = $_POST['location'];
-    $limit = $_POST['limit'];
-    $type = $_POST['type'];
-    $time = $_POST['time'];
-    $seconds = $_POST['seconds'];
+$title = $_POST['title'];
+$description = $_POST['description'];
+$location = $_POST['location'];
+$limit = $_POST['limit'];
+$type = $_POST['type'];
+$time = $_POST['time'];
+$seconds = $_POST['seconds'];
 
-    $object = new DateTime("now");
-    $date = $object->format("m-d-Y");
+$object = new DateTime("now");
+$date = $object->format("m-d-Y");
 
 
-    $connection = mysqli_connect($server, $serverUser, $serverPassword, $serverDatabase);
 
-    if ($type == "activity") {
+if ($type == "activity") {
 
     $queryString = "INSERT INTO Activity (Title, Content, User_ID, Post_Time, Post_Date, Participant_Limit, Location, Seconds) VALUES (";
     $queryString .= "'" . $title . "'" . ", " . "'" . $description . "'" . ", " . "'" . $user . "'" . ", " . "'" . $time . "'";
@@ -37,7 +37,7 @@
 
     $query = mysqli_query($connection, $queryString);
 
-        if (!$query) {
+    if (!$query) {
         $response = "Please try again. No special characters or duplicate events!";
     }   else {
         $response = "success";
@@ -53,20 +53,22 @@
 
     $query = mysqli_query($connection, $queryString);
 }
-    else {
+else {
 
     $query = mysqli_query($connection, $queryString);
 
-        if (!$query) {
+    if (!$query) {
         $response = "An error occurred. Please try again.";
     }
-        else {
+    else {
         $response = "success";
     }
 }
-    echo $response;
+echo $response;
 
-    mysqli_close($connection);
+mysqli_close($connection);
+
+
 
 
 

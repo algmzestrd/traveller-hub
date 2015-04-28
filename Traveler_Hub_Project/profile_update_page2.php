@@ -15,18 +15,15 @@
 
 
 <form action="profile_update.php" method="post" style = "margin-left:auto; margin-right:auto;width:500px; padding:20px">
-    <label for = "nation">Nationality:</label>
-    <input type="text" class = "form-control" name="nation">
-    <label for = "residency">Residency:</label>
-    <input type="text" class = "form-control" name="residency">
-    <label for = "gender">Hobbies:</label>
-    <div style = "padding-top: 5px">
-    <textarea rows="4" cols="50"></textarea>
-    </div>
-    <label for = "gender">Moto:</label>
-    <div style = "padding-top: 5px">
-    <textarea rows="4" cols="50"></textarea>
-    </div>
+    <label for = "username">User Name:</label>
+    <input type="text" class = "form-control" name="username">
+    <label for = "password">Current Password:</label>
+    <input type="text" class = "form-control" name="password">
+    <label for = "newpass">New Password:</label>
+    <input type="text" class = "form-control" name="newpass">
+    <label for = "confirmpass">Confirming Password:</label>
+    <input type="text" class = "form-control" name="confirmpass">
+    
     <div style = "padding-left:150px; padding-top:20px">
     <button type="submit" class="btn btn-default">Submit</button>
     </div>

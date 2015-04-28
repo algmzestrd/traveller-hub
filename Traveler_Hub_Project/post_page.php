@@ -211,6 +211,29 @@ session_start();
 					</form>					
 					</li>
       			</ul>
+                   <div class="isu-QuickLinks">
+
+  <ul class="isu-QuickLinks-right">
+    <li>
+      <a class="isu-Icon--facebook" href="http://www.facebook.com/IowaStateU" title="Facebook">
+        <i class="fa fa-facebook-square"></i>
+        <span class="wd-u-HiddenVisually"></span>
+      </a>
+    </li>
+    <li>
+      <a class="isu-Icon--twitter" href="http://twitter.com/IowaStateU" title="Twitter">
+        <i class="fa fa-twitter-square"></i>
+        <span class="wd-u-HiddenVisually"></span>
+      </a>
+    </li>
+    <li>
+      <a class="isu-Icon--youtube" href="http://www.youtube.com/user/iowastateu" title="YouTube">
+        <i class="fa fa-youtube-square"></i>
+        <span class="wd-u-HiddenVisually"></span>
+      </a>
+    </li>
+  </ul>
+</div>
   			</div>
 		</nav>
 		
@@ -293,29 +316,7 @@ session_start();
 
 
 		<!-- End waterfull here -->
-        <div class="isu-QuickLinks">
-
-  <ul class="isu-QuickLinks-right">
-    <li>
-      <a class="isu-Icon--facebook" href="http://www.facebook.com/IowaStateU" title="Facebook">
-        <i class="fa fa-facebook-square"></i>
-        <span class="wd-u-HiddenVisually"></span>
-      </a>
-    </li>
-    <li>
-      <a class="isu-Icon--twitter" href="http://twitter.com/IowaStateU" title="Twitter">
-        <i class="fa fa-twitter-square"></i>
-        <span class="wd-u-HiddenVisually"></span>
-      </a>
-    </li>
-    <li>
-      <a class="isu-Icon--youtube" href="http://www.youtube.com/user/iowastateu" title="YouTube">
-        <i class="fa fa-youtube-square"></i>
-        <span class="wd-u-HiddenVisually"></span>
-      </a>
-    </li>
-  </ul>
-</div>
+     
 
 <nav class="navbar navbar-pills navbar-fixed-bottom" style = "height: 0px">
     <div class="container-fluid">

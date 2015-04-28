@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+  if(!isset($_SESSION['user'])) {
+    header("Location: loginPage.html");
+}
+
+if($_SESSION)
 mysql_connect("mysql.cs.iastate.edu","u30914","AfzMyGF4c7") or die("could not connect");
 mysql_select_db("db30914") or die("could not connect db");
 $output="";

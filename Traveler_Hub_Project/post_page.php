@@ -316,6 +316,12 @@ session_start();
     </li>
   </ul>
 </div>
+
+<nav class="navbar navbar-pills navbar-fixed-bottom" style = "height: 0px">
+    <div class="container-fluid">
+        <h4 style = "color: #FFFFFF"> Copy rights: Travelers' Hub 2015 </h4>
+    </div><!-- /.container-fluid -->
+</nav>
     </body>
 
 </html>

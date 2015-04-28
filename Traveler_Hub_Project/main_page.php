@@ -127,7 +127,7 @@ header('Content-Type: text/html; charset=UTF-8');
 </div>
 
 
-<nav class="navbar navbar-pills" style = "height: 0px">
+<nav class="navbar navbar-pills navbar-fixed-bottom" style = "height: 0px">
     <div class="container-fluid">
         <h4 style = "color: #FFFFFF"> Copy rights: Travelers' Hub 2015 </h4>
     </div><!-- /.container-fluid -->

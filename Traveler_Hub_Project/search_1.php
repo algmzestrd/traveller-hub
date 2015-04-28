@@ -89,15 +89,52 @@ echo "</table>";
     
 }
  
- if(isset($_POST['deleteItem']))
-{
-     
-     $del=$_POST['deleteItem'];
-  $query=mysql_query(" 
-   DELETE FROM Activity
-WHERE Content like '%$del%'") or die("could not find in Activity");
-     print("YOU HAVE DELETE SUCCESSFULLY")
-     
+if(isset($_POST['join']))
+{   
+    $id=" ";
+    $time="";
+    $count=0;
+    $id=$_POST['join'];
+    $time=date('h:i A');
+    $user=$_SESSION['user'];
+    $object =new DateTime("now");
+    $date = $object->format("m-d-Y");
+    $sql="SELECT * FROM Activity";
+    $query=mysql_query($sql);
+    while($row = mysql_fetch_array($query)){
+        if($id == $row['Activity_ID'] && $user == $row['User_ID'])
+            $count +=1;
+        
+    }
+    if($count == 0){
+    $sql="SELECT * FROM Participate ";
+    $query=mysql_query($sql);
+    while($row = mysql_fetch_array($query)){
+        if($row['User_ID'] == $user && $row['Activity_ID'] == $id){
+            $count +=1;
+        }
+        
+    }
+    if($count == 0){
+   $sql = "INSERT INTO Participate (Activity_ID, User_ID, Join_Time, Join_Date) VALUES (";
+    $sql .= "'" . $id . "'" . ", " . "'" . $user . "'" . ", " . "'" . $time . "'";
+    $sql .= ", " . "'" . $date . "')";
+    $query=mysql_query($sql);
+    $sql="UPDATE Activity
+SET Participants= Participants +'1'
+where Activity_ID =" ."'" .$id. "'". ";";
+    
+       
+    $query=mysql_query($sql);
+            print("join successfully");
+}
+    else
+        print("You have already joined");
+
+    }
+    else
+        print("You are the event organiser = =");
+    
 }
 
  mysql_close();

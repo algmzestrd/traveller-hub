@@ -1,7 +1,0 @@
--> Password recovery. Recovery codes should probably be hashed.
--> Banning users. Need ban page.
--> Management page.
--> Email account for application.
-
-    -thetravelerhubteam@gmail.com
-    -12345678traveler
